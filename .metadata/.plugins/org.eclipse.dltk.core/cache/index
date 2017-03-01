@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="ASCII"?>
+<cache:CacheIndex xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:cache="http://eclipse.org/dltk/cache_model" environment="org.eclipse.dltk.core.environment.localEnvironment">
+  <entries path="C:/Users/lili/Documents/GitHub/zone/zone/WebRoot/js/bootstrap.js" timestamp="1488353347732" lastAccessTime="1488353355517"/>
+  <entries path="C:/Users/lili/Documents/GitHub/zone/zone/WebRoot/js/bootstrap.min.js" timestamp="1488353347778" lastAccessTime="1488353355916"/>
+  <entries path="C:/Users/lili/Documents/GitHub/zone/zone/WebRoot/js/jquery1.9.js" timestamp="1488353347837" lastAccessTime="1488353356427"/>
+  <entries path="C:/Users/lili/Documents/GitHub/zone/zone/WebRoot/js/jquery2.24.js" timestamp="1488353347913" lastAccessTime="1488353357405"/>
+  <entries path="C:/Users/lili/Documents/GitHub/zone/zone/WebRoot/js/npm.js" timestamp="1488353348325" lastAccessTime="1488353357609"/>
+</cache:CacheIndex>
