@@ -1,3 +1,0 @@
-INDEX VERSION 1.126
-C:\Users\lili\Documents\GitHub\zone\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2155688262.index
-\zone\src
