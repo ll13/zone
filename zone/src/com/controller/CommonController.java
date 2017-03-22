@@ -20,16 +20,7 @@ public class CommonController {
 		 return "bottom";
 	}
 	
-	@RequestMapping("page.do")
-	public String page(int currentPage,int totalPage,String url,Model model){
-		System.out.println("xxxxxxxxxxxxxxxxxx"+currentPage);
-		System.out.println("-----------------------"+totalPage);
-		
-		model.addAttribute("currentPage",currentPage);
-		model.addAttribute("totalPage", totalPage);
-		model.addAttribute("url", url);
-		return "page";
-	}
+	
 	
 
 }
