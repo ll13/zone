@@ -4,9 +4,8 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
      <typeAliases>
+       <typeAlias type="com.po.User" alias="User"/>
        
-       <typeAlias type="com.po.UserInfo" alias="UserInfo"/>
-       <typeAlias type="com.po.NewsInfo" alias="NewsInfo"/>
      </typeAliases>
 
      <mappers>

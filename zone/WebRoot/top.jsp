@@ -6,45 +6,111 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!DOCTYPE html> 
 <html>
 <head>
- <base href="<%=basePath%>">
- <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/bootstrap.css" type="text/css"></link>
-  <link rel="stylesheet" href="css/login.css" type="text/css"></link>
-  <script type="text/javascript" src="js/jquery.js"></script>
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+      <title>zone</title>
 
+     <base href="<%=basePath%>">
+     <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+      <link rel="shortcut icon" type="image/x-icon" href="img/logo.ico"></link>	  
+	  <link rel="stylesheet" href="css/smoothness/jquery.ui.css" type="text/css"></link>
+	  <link rel="stylesheet" href="css/index.css" type="text/css"></link>
+  
+  
+  
+	<script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery-migrate-1.2.1.js"></script>
+    <script type="text/javascript" src="js/jquery.ui.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/jquery.validate.js"></script>
+    <script type="text/javascript" src="js/jquery.form.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
+	 
+	 
+	  
+	  
  </head>
+ 
+ 
  <body>
-   <nav class="nav navbar-inverse  " style="filter:alpha(Opacity=90);-moz-opacity:0.9;opacity: 0.9" role="navigation">
-   	<div class="container">
-	   		<div class="navbar-header">
-	   	     <a href="#" class="navbar-brand">
-	   	         <strong>南大软件学院</strong>
-	   	     </a>
-	   		</div>
-	
-		   	<ul class="nav navbar-nav">
-		   			<li><a href="#">首页</a></li>
-		   			<li><a href="newsinfo/newslist.do">新闻</a></li>
-		   			
-		   			<li><a href="#">观点</a></li>
-		   			<li><a href="#">科技</a></li>
-		   	</ul>
-	   		<div class="navbar-form navbar-right">
-	   			<div class="form-group">	
-		   			<div class="input-group">
-		   				<input type="text" class="form-control" placeholder="请输入文章关键字"  />
-		   				<div class="input-group-btn">
-		   					<button class="btn btn-block"><span class="glyphicon glyphicon-search"></span></button>
-		   				</div>
-		   			</div>	
-	   			</div>
-	   			<div class="form-group" style="padding-left: 10px; margin: 0px 12px;">
-		   			<a href="#" style="color: #D2D2D2;">登录</a>
-		   			<span  style="color: #D2D2D2;padding-left: 5px;">|</span>
-		   			<a href="#" style="color: #D2D2D2;padding-left: 5px;">注册</a>
-	   			</div>
-	   		</div>	
-   	  </div>
-   </nav> 
+   
+   	<div id="header">
+	   	<div class="header_main">
+	   	     <h1>MyZone</h1>
+	   		
+	          <div class="header_button">
+                 <button id="blog_btn" class="btn">博客</button>
+                 <button id="bbs_btn" class="btn">论坛</button>
+                 <button id="question_btn" class="btn">提问</button>
+                 <button id="download_btn" class="btn">下载</button>
+                 <button id="score_btn" class="btn">积分</button>
+                 <button id="information_btn" class="btn">个人主页</button>
+             </div>
+		   	
+		   	 <div class="header_member">
+                <a href="javascript:void(0)" id="register_a">注册</a>
+                <a href="javascript:void(0)" id="user_a">用户</a>               
+                |
+                <a href="javascript:void(0)" id="login_a">登录</a>
+                <a href="javascript:void(0)" id="logout_a">退出</a>
+             </div>		
+		   	
+	   		
+   	      </div>
+       </div>
+        <form id="register" title="会员注册" >
+          <ol class="register_error"></ol>
+          
+          <p>
+             <label for="user">账号:</label>
+             <input type="text" name="name" class="text" id="user"/>
+             <span class="star">*</span>
+          </p>
+          <p>
+             <label for="user">密码:</label>
+             <input type="password" name="pass" class="text" id="pass" />
+              <span class="star">*</span>
+          </p>
+          <p>
+             <label for="email">邮箱:</label>
+             <input type="text" name="email" class="text" id="email"/>
+             <span class="star">*</span>
+          </p>
+          <p>
+             <label for="user">性别:</label>
+             <input type="radio" name="sex" value="male" id="male" checked="checked">
+                <label for="male">男</label>
+             
+             <input type="radio" name="sex" value="female" id="female">
+                <label for="female">女</label>
+             
+          </p>
+          <p>
+             <label for="date">生日:</label>
+             <input type="text" name="birthday" readonly="readonly" class="text" id="date"/>
+          </p>
+     </form>
+     
+     
+     <form id="login" title="会员登录" >
+          <ol class="login_error"></ol>
+          
+          <p>
+             <label for="user">账号:</label>
+             <input type="text" name="name" class="text" id="login_user"/>
+             <span class="star">*</span>
+          </p>
+          <p>
+             <label for="user">密码:</label>
+             <input type="password" name="pass" class="text" id="login_pass" />
+              <span class="star">*</span>
+          </p>
+          <input type="checkbox" name="expires" id="expires" checked="checked"><label for="expires">登录有效期一周</label>
+     </form>
+     
+     
+     
+     <div id="loading">数据交互中</div>
+     <div id="error">请登录后操作...</div>
+       
+       
