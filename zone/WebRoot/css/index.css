@@ -12,6 +12,16 @@ body{
 /*设置tabs 的background  */
 .ui-widget-header{
 	background: url(../img/ui_header_bg.png);
+	display:block !important;
+}
+
+.ui-datepicker-tody .ui-state-highlight{
+	border:1px solid #eee;
+	color:#fff;
+}
+
+.ui-tooltip{
+	color:red;
 }
 
 #header{
@@ -188,6 +198,8 @@ body{
 	color: #666;
 	
 }
+
+
 
 #loading{
 	background:url(../img/loading.gif) no-repeat 20px center;

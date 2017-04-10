@@ -9,15 +9,42 @@ $(function(){
 		
 		
 	});
+	
+	
+	
 	$("#download_btn").button();
 	$("#score_btn").button();
 	$("#information_btn").button();
 	
+	$("#register").dialog({
+		 autoOpen:false,
+		 modal:true,
+		 width:320,
+		 height:400,
+		 resizable:false,
+		 draggable:false,
+		 buttons:{'注册':function(){
+			 $(this).submit();
+		 }}
+	 });
 	
+	 $("#login").dialog({
+		 autoOpen:false,
+		 modal:true,
+		 width:320,
+		 height:300,
+		 resizable:false,
+		 draggable:false,
+		 buttons:{'登录':function(){
+			 $(this).submit();
+		 }}
+	 });
+	 
+	 
 	//tabs
 	$(function() {
 	    $( "#tabs" ).tabs({
-	    	 event: "mouseover",
+	    	
 	    });
 	  });
 	
@@ -48,32 +75,23 @@ $(function(){
 	$("#logout_a").click(function(){
 		alert(123);
 		$.cookie("user",null);
-		window.location.href="/zhihu/";
+		window.location.href="/zone/";
 	});
 	
 	
 
 	
-	//注册	
-	$("#register").dialog({
-		 autoOpen:false,
-		 modal:true,
-		 width:320,
-		 height:400,
-		 resizable:false,
-		 draggable:false,
-		 buttons:{'注册':function(){
-			 $(this).submit();
-		 }}
-	 });
+	//注册
+	$("#register").buttonset();
+	$("#date").datepicker();
+	
 	
 	$("#register_a").click(function(){
 		$("#register").dialog('open');
 	});
 	
 	
-	$("#register").buttonset();
-	$("#date").datepicker();
+	
 	$("#register").validate({
 		   
 		   submitHandler:function(form){
@@ -163,17 +181,7 @@ $(function(){
 		   $("#login").dialog("open");
 	   });
 	   
-	   $("#login").dialog({
-			 autoOpen:false,
-			 modal:true,
-			 width:320,
-			 height:300,
-			 resizable:false,
-			 draggable:false,
-			 buttons:{'登录':function(){
-				 $(this).submit();
-			 }}
-		 });
+	  
 	   
 	   
 	   
@@ -219,7 +227,7 @@ $(function(){
 					  }
 					  else
 					  {
-						  $("#loading").css("background","url(img/loading.gif) no-repeat 20px center").html("错误的账号名/密码.....");
+						  $("#loading").css("background","url(img/error.png) no-repeat 20px center").html("错误的账号名/密码.....");
 						  
 						  setTimeout(function(){
 							  $("#loading").dialog("close");
@@ -276,7 +284,7 @@ $(function(){
 	   //退出
 	   	$("#logout_a").click(function(){
 			$.cookie("user",null);
-			window.location.href="/zhihu/";
+			window.location.href="/zone/";
 		});
 		
 	  //提示框
@@ -348,7 +356,7 @@ $(function(){
 			  }
 		  });
 		
-	
+		 
 	
 });//function 结束
 

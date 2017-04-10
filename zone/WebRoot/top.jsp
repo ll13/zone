@@ -58,7 +58,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	   		
    	      </div>
        </div>
+       
         <form id="register" title="会员注册" >
+          
           <ol class="register_error"></ol>
           
           <p>
@@ -93,6 +95,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
      
      
      <form id="login" title="会员登录" >
+          
           <ol class="login_error"></ol>
           
           <p>
@@ -112,5 +115,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
      
      <div id="loading">数据交互中</div>
      <div id="error">请登录后操作...</div>
+     
+
+
+ 
+ 
        
        
