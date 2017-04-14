@@ -5,8 +5,7 @@
 
 <c:import url="common/top.do"></c:import>
 
- <div class="container" >
- <div class="row"></div>
+
  
  
  
