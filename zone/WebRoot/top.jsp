@@ -12,7 +12,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
      <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-      <link rel="shortcut icon" type="image/x-icon" href="img/logo.ico"></link>	  
+      <link rel="shortcut icon" type="image/x-icon" href="img/logo.ico"></link>
+      <link rel="stylesheet" href="css/reset.css" type="text/css"></link>	  
 	  <link rel="stylesheet" href="css/smoothness/jquery.ui.css" type="text/css"></link>
 	  <link rel="stylesheet" href="css/Top_Bottom.css" type="text/css"></link>
   
@@ -29,7 +30,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	 
 	  
 	  
- </head>
+</head>
  
  
  <body>
