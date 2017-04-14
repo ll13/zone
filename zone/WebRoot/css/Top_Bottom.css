@@ -1,0 +1,189 @@
+@CHARSET "UTF-8";
+
+
+
+
+/*设置tabs 的background  */
+.ui-widget-header{
+	background: url(../img/ui_header_bg.png);
+	display:block !important;
+}
+
+.ui-datepicker-tody .ui-state-highlight{
+	border:1px solid #eee;
+	color:#fff;
+}
+
+.ui-tooltip{
+	color:red;
+}
+
+#header{
+	width: 100%;
+	height: 40px;
+	background: url(../img/header_bg.png);
+	position: absolute;
+	top:0;
+	
+}
+
+#header .header_main{
+	width: 70%;
+	height: 40px;
+	margin:0 auto;
+	
+}
+
+#header .header_main h1{
+	
+	font-size: 20px;
+	margin:0;
+	padding: 0;
+	color: #666;
+	height: 40px;
+	line-height: 40px;
+	padding: 0 10px;
+	float: left;
+
+}
+
+#header .header_button{
+	padding: 5px;
+	float: left;
+}
+
+
+#header .header_member
+{
+	float: right;
+	height: 40px;
+	line-height: 40px;
+	color: #555;
+	font-size: 14px;
+	
+}
+
+#footer {
+    min-width: 100%;
+    margin-top: 20px!important;
+    float: left;
+}
+
+#footer_up{
+	background: #fff;
+    border-top: 1px solid #e4e4e4;
+    border-bottom: 1px solid #e4e4e4;
+    padding-bottom: 50px;
+    
+    
+}
+
+#footer_up .footer_up_block  {
+    width: 80%;
+    margin: 0 auto;
+    min-height: 40px;   
+    
+}
+
+#footer_up .footer_up_block_ad{
+	width: 15%;
+    padding-left: 30px;
+    color: gray;
+    margin: 25px 0;
+    float: left;
+    border-left: 1px solid #e4e4e4;
+   
+}
+
+#footer a {
+	text-decoration:none;
+	color:gray;
+}
+
+#footer .copyright {
+    font-size: 12px;
+    color: #999;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+}
+
+#register,#login{
+	padding: 15px 0 0 15px;
+}
+
+#register p,#login p{
+	margin: 10px 0;
+	padding: 0;
+}
+
+#register p label,#login p label{
+	font-size: 14px;
+	color: #666;
+}
+
+#register .star,#login .star{
+	font-size: 14px;
+	color: red;
+}
+
+#register .success,#login .success
+{
+	display: inline-block;
+	width: 28px;
+	background: url(../img/reg_succ.png) no-repeat;
+}
+
+#register ol,#login ol{
+	margin: 0;
+	padding: 0 0 0 20px;
+	color: maroon;
+}
+
+#register ol li,#login ol li
+{
+	height: 20px;
+}
+
+#register .text,#login .text{
+	border-radius:4px;
+	border:1px solid #ccc;
+	background: #fff;
+	width: 200px;
+	height: 25px;
+	line-height: 25px;
+	text-indent: 5px;
+	font-size: 13px;
+	color: #666;
+	
+}
+
+
+
+#loading{
+	background:url(../img/loading.gif) no-repeat 20px center;
+	line-height: 25px;
+	font-size: 14px;
+	font-weight: bolder;
+	text-indent: 40px;
+	color: #666;
+}
+
+#error{
+	background:url(../img/error.png) no-repeat 20px center;
+	line-height: 25px;
+	font-size: 14px;
+	font-weight: bolder;
+	text-indent: 40px;
+	color: #666;
+}
+
+
+
+#header .header_member a
+{
+	text-decoration: none;
+	font-weight: normal;
+    color: #555555;
+}

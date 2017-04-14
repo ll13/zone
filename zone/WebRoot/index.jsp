@@ -5,9 +5,11 @@
 
 
 
-
-
 <c:import url="common/top.do"></c:import>
+
+
+<link rel="stylesheet" href="css/index.css" type="text/css"></link>
+
 
 <div id="main">
      <div class="main_top" id="tabs">

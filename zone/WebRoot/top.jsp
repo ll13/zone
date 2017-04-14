@@ -14,7 +14,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
       <link rel="shortcut icon" type="image/x-icon" href="img/logo.ico"></link>	  
 	  <link rel="stylesheet" href="css/smoothness/jquery.ui.css" type="text/css"></link>
-	  <link rel="stylesheet" href="css/index.css" type="text/css"></link>
+	  <link rel="stylesheet" href="css/Top_Bottom.css" type="text/css"></link>
   
   
   

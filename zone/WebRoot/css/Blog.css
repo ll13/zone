@@ -1,0 +1,39 @@
+@CHARSET "UTF-8";
+@CHARSET "UTF-8";
+
+
+
+#main{
+	width: 800px;
+	margin: 0 auto;
+	padding: 10px 0 0 0;
+	
+}
+
+#main .main_left{
+	width:580px;
+	float: left;
+}
+#main .main_right{
+	width:200px;
+	float: right;
+}
+
+/*设置tabs 的background  */
+.ui-widget-header{
+	background: url(../img/ui_header_bg.png);
+	display:block !important;
+}
+
+
+#tabs{
+	border: none;
+}
+
+#首页,#博客专家,#排行榜{
+	border: 1px solid #aaa;
+	border-top: none;
+	position: relative;
+	top:-2px;
+}
+
