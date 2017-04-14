@@ -13,10 +13,10 @@
 
 <div id="main">
      <div class="main_top" id="tabs">
-         <ul>
-            <li><a href="tab1.html">tab1</a></li>
-            <li><a href="tab2.html">tab2</a></li>
-            <li><a href="tab3.html">tab3</a></li>
+         <ul >
+            <li><a href="tab1.html" id="tab1">tab1</a></li>
+            <li><a href="tab2.html" id="tab2">tab2</a></li>
+            <li><a href="tab3.html" id="tab3">tab3</a></li>
          </ul>
          
       </div>

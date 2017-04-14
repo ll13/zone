@@ -6,20 +6,15 @@
 <c:import url="/common/top.do"></c:import>
 <link rel="stylesheet" href="css/Blog.css" type="text/css"></link>
 
-  <script>
-  $(function() {
-    $( "#tabs" ).tabs();
-    
-  });
-  </script>
+
   
 <div id="main">
      <div class="main_left">
          <div id="tabs">
-              <ul>
-                  <li><a href="blog/Blog_overview.jsp">首页</a></li>
-                  <li><a href="blog/Blog_experts.jsp">博客专家</a></li>
-                  <li><a href="blog/Blog_rank.jsp">排行榜</a></li>
+              <ul id="bar">
+                  <li><a href="blog/Blog_overview.jsp" id="Blog_overview">首页</a></li>
+                  <li><a href="blog/Blog_experts.jsp" id="Blog_experts">博客专家</a></li>
+                  <li><a href="blog/Blog_rank.jsp" id="Blog_rank">排行榜</a></li>
               </ul>
              </div>
       </div>
