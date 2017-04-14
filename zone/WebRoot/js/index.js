@@ -89,18 +89,12 @@ $(function(){
 	$("#register").validate({
 		   
 		   submitHandler:function(form){
-			   var password=hex_md5($('#pass').val());				
-				$('#pass').val(password) ;  //md5加密
-				
-				
 			   $(form).ajaxSubmit({
 				   url:'register.do',
 				   type:'post',
 				   beforeSubmit:function(formData,jqForm,options){
 					$("#register").dialog("widget").find("button").eq(1).button("disable");    //提交按钮置灰
 					$("#loading").dialog("open");    //进度框打开
-					
-					
 				   },
 				   success:function(responseText,statusText){
 					  if(responseText=="1")
@@ -186,10 +180,8 @@ $(function(){
 	   
 	   
 	   	$("#login").validate({
-	   	    
+		   
 		   submitHandler:function(form){
-			   var password=hex_md5($('#login_pass').val());				
-			   $('#login_pass').val(password) ;  //md5加密
 			   $(form).ajaxSubmit({
 				   url:'login.do',
 				   type:'post',
@@ -366,6 +358,3 @@ function replacePos(str,pos,replaceText){
 	return str.substr(0,pos-1)+replaceText+str.substring(pos,str.length);
 }
 
-
-	
-	
