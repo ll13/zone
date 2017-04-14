@@ -20,7 +20,7 @@
        </div>
        <div id="footer_down">
        		<div class="copyright">
-       		    copyright &nbsp; &nbsp;&nbsp;
+       		    copyright &nbsp;@&nbsp;
        		    <a href="#" >我的空间 </a>
        		</div>
            
