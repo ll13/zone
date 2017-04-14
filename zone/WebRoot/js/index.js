@@ -49,12 +49,6 @@ $(function(){
 	  });
 	
 	
-	//accordion 折叠面板
-	$("#accordion").accordion({
-		collapsible: true ,
-		
-	  });
-	
 	
 	
 	//注册 登陆 退出 用户的显示	

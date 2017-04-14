@@ -83,14 +83,11 @@ body{
 	
 }
 
-#main .main_left{
-	width:580px;
+#main .main_top{
+	width:800px;
 	float: left;
 }
-#main .main_right{
-	width:200px;
-	float: right;
-}
+
 
 #tabs{
 	border: none;
