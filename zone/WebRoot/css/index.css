@@ -26,12 +26,7 @@ body{
 	border: none;
 }
 
-#tab1,#tab2,#tab3{
-	border: 1px solid #aaa;
-	border-top: none;
-	position: relative;
-	top:-2px;
-}
+
 
 
 
