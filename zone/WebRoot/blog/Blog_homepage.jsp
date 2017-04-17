@@ -4,7 +4,7 @@
 
 
 <c:import url="/common/top.do"></c:import>
-<link rel="stylesheet" href="css/Blog.css" type="text/css"></link>
+<link rel="stylesheet" href="blog/css/Blog.css" type="text/css"></link>
 
 
   

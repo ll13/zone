@@ -25,7 +25,9 @@ body{
 
 
 #bar{
-	border:1px solid red;
+	border:none;
+	border-bottom:1px solid grey;
+	background:none;
 }
 
 #tabs{
@@ -36,7 +38,6 @@ body{
 
 #Blog_overview,#Blog_experts,#Blog_rank{
 	border:none;
-	
 	position: relative;
 	top:-2px;
 	
