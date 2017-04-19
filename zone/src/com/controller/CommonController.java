@@ -11,6 +11,8 @@ public class CommonController {
 	
 	@RequestMapping("top.do")
 	public String top(){
+		
+		
 		 return "top";
 	}
 	

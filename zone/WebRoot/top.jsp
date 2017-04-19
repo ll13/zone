@@ -1,39 +1,7 @@
 ﻿<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
-<%
-String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-%>
-<!DOCTYPE html> 
-<html>
-<head>
-      <title>zone</title>
+ 
+ 
 
-     <base href="<%=basePath%>">
-     <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-      <link rel="shortcut icon" type="image/x-icon" href="img/logo.ico"></link>
-      <link rel="stylesheet" href="css/reset.css" type="text/css"></link>	  
-	  <link rel="stylesheet" href="css/smoothness/jquery.ui.css" type="text/css"></link>
-	  <link rel="stylesheet" href="css/Top_Bottom.css" type="text/css"></link>
-  
-  
-  
-	<script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/jquery-migrate-1.2.1.js"></script>
-    <script type="text/javascript" src="js/jquery.ui.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
-    <script type="text/javascript" src="js/jquery.validate.js"></script>
-    <script type="text/javascript" src="js/jquery.form.js"></script>
-    <script type="text/javascript" src="js/jquery.cookie.js"></script>
-	<script type="text/javascript" src="js/md5.js"></script>
-	 
-	  
-	  
-</head>
- 
- 
- <body>
    
    	<div id="header">
 	   	<div class="header_main">
@@ -42,7 +10,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	          <div class="header_button">
                  <button id="blog_btn" class="btn">博客</button>
                  <button id="bbs_btn" class="btn">论坛</button>
-                 <button id="question_btn" class="btn">提问</button>
+                 <button id="question_btn" class="btn"><a href=ask/ask.jsp>问答</a></button>
                  <button id="download_btn" class="btn">下载</button>
                  <button id="score_btn" class="btn">积分</button>
                  <button id="information_btn" class="btn">个人主页</button>

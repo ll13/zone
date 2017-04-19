@@ -1,27 +1,13 @@
 @CHARSET "UTF-8";
 
-body{
-	margin: 40px 0 0 0;
-	padding: 0;
-	font-size: 12px;
-	font-family: 宋体;
-	background: #fff;
-	
-}
+
 #main{
-	width: 800px;
+	width: 950px;
 	margin: 0 auto;
 	padding: 10px 0 0 0;
 	
 }
 
-#main .main_top{
-	width:800px;
-	float: left;
-}
 
 
-#tabs{
-	border: none;
-}
 

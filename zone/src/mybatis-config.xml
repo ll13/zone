@@ -5,7 +5,9 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 <configuration>
      <typeAliases>
        <typeAlias type="com.po.User" alias="User"/>
-       
+       <typeAlias type="com.po.Question" alias="Question"/>
+       <typeAlias type="com.po.Answer" alias="Answer"/>
+       <typeAlias type="com.po.Page" alias="Page"/>
      </typeAliases>
 
      <mappers>
