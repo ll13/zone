@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.Blog_CommentMapper">
+   
+   
+   <resultMap type="Blog_Comment" id="blog_commentmap">
+      <result property="id" column="id"/>
+      <result property="blog_id" column="blog_id"/>
+      <result property="content" column="content"/>
+      <result property="user_id" column="user_id"/>
+      <result property="date" column="date"/>
+   </resultMap>
+   
+
+ <select id="showBlog_Comment" parameterType="showBlog_Comment" resultMap="blog_commentmap">
+ 	select * from comment where blog_id=#{blog_id}  order by date
+  </select>
+</mapper>

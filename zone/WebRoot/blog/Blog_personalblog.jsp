@@ -29,4 +29,7 @@
       		</ul>
 	</div>
 </div>
+	<div class="main_right">
+		
+	</div>
 </div>

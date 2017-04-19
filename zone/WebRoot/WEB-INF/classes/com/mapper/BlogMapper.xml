@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.BlogMapper">
+   
+   
+   <resultMap type="Blog" id="blogmap">
+      <result property="id" column="id"/>
+      <result property="title" column="title"/>
+      <result property="class_id" column="class_id"/>
+      <result property="content" column="content"/>
+      <result property="author_id" column="author_id"/>
+      <result property="pubtime" column="pubtime"/>
+      <result property="clicknum" column="clicknum"/>
+      <result property="collectnum" column="collectnum"/>
+      <result property="commentnum" column="commentnum"/>
+      <result property="Commentpermission" column="Commentpermission"/>
+   </resultMap>
+  
+  
+  
+<select id="getBlog"  parameterType="Blog" resultMap="blogmap">
+     
+   </select>
+   
+ 
+ 
+ </mapper>
