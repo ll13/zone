@@ -12,8 +12,21 @@
 <div id="main">
 	<div class="main_top">
 	</div>
-     <div class="main_left">
-     
-      </div>
-      
+    <div class="main_left">
+     	<div class="info_title">
+     		<p>个人资料</p>
+     	</div>
+     	<div class="info_pic">
+     		<img src="" alt="img"></img>
+        </div>
+        <div class="interact">
+        	<button type="button" class="concern">关注</button>
+        	<button type="button" class="Privatechat">私信</button>
+      	</div>
+      	<div class="data">
+      		<ul>
+      			<li>data</li>
+      		</ul>
+	</div>
+</div>
 </div>

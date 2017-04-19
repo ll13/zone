@@ -30,9 +30,26 @@ body{
 	width:200px;
 	height:600px;
 	float:left;
-	background:blue;
+	
+	border:1px solid #CCCCCC;
 }
+.info_title{
+	background:#F5F5F5;
+}
+.info_title p{
+	font-size: 20px;
+}
+.info_pic{
+	width:100%;
+	height:40%;
+	}
 
-
-
-
+.info_pic img{
+	display:block;
+	
+}
+.interact{
+	width:100%;
+	height:20px;
+	text-align:center;
+}
