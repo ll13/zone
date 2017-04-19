@@ -5,10 +5,10 @@ $(function(){
 	
 	
 	
-	alert(123);
+
 	
 	$("#question").dialog({
-		autoOpen:true,
+		autoOpen:false,
 		modal:true,
 		resizable:false,
 		width:500,

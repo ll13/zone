@@ -1,9 +1,5 @@
 ﻿<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
- 
- 
-
-   
-   	<div id="header">
+ 	<div id="header">
 	   	<div class="header_main">
 	   	     <h1>MyZone</h1>
 	   		

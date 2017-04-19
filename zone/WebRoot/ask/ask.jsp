@@ -16,34 +16,29 @@
 
        
       <link rel="shortcut icon" type="image/x-icon" href="img/logo.ico"></link>
-      <link rel="stylesheet" href="css/reset.css" type="text/css"></link>	  
-	  <link rel="stylesheet" href="css/smoothness/jquery.ui.css" type="text/css"></link>
-	  <link rel="stylesheet" href="css/Top_Bottom.css" type="text/css"></link>
-  
+      <link rel="stylesheet" href="css/reset.css" type="text/css"></link>	  	  	  
+      <link rel="stylesheet" href="css/bootstrap.css" type="text/css"></link>
+      <link rel="stylesheet" href="css/smoothness/jquery.ui.css" type="text/css"></link>
+      <link rel="stylesheet" href="uEditor/uEditor.css" type="text/css"></link>
+      <link rel="stylesheet" href="css/Top_Bottom.css" type="text/css"></link>
+	  <link rel="stylesheet" href="css/ask.css" type="text/css"></link>
   
   
 		<script type="text/javascript" src="js/jquery.js"></script>
+		 <script type="text/javascript" src="js/bootstrap.js"></script>
 	    <script type="text/javascript" src="js/jquery-migrate-1.2.1.js"></script>
-	    <script type="text/javascript" src="js/jquery.ui.js"></script>
-	    <script type="text/javascript" src="js/index.js"></script>
+	    <script type="text/javascript" src="js/jquery.ui.js"></script>	    
 	    <script type="text/javascript" src="js/jquery.validate.js"></script>
 	    <script type="text/javascript" src="js/jquery.form.js"></script>
 	    <script type="text/javascript" src="js/jquery.cookie.js"></script>
 		<script type="text/javascript" src="js/md5.js"></script>
-
-
-
-
-		<link rel="stylesheet" href="css/bootstrap.css" type="text/css"></link>
-		<link rel="stylesheet" href="uEditor/uEditor.css" type="text/css"></link>
-		<link rel="stylesheet" href="css/ask.css" type="text/css"></link>
-		
-		<script type="text/javascript" src="js/bootstrap.js"></script>
-		
+       		
 		<script type="text/javascript" src="uEditor/uEditor.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
 		<script type="text/javascript" src="js/ask.js"></script>
-
-</head>
+        <script type="text/javascript" src="js/bottom.js"></script>
+        
+   </head>
 
 <body>
 
@@ -87,5 +82,7 @@
 		</p>
 
 	</form>
+	
+	<c:import url="/common/bottom.do"></c:import>
 </body>
 </html>

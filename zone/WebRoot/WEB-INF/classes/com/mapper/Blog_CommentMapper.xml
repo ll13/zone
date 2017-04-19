@@ -14,7 +14,5 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
    </resultMap>
    
 
- <select id="showBlog_Comment" parameterType="showBlog_Comment" resultMap="blog_commentmap">
- 	select * from comment where blog_id=#{blog_id}  order by date
-  </select>
+ 
 </mapper>
