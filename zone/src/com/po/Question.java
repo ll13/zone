@@ -4,7 +4,7 @@ import java.sql.Date;
 
 public class Question {
 	private int questionid;
-	private int username;
+	private String username;
 	private String title;
 	private String content;
 	private String point;
@@ -17,10 +17,10 @@ public class Question {
 	public void setQuestionid(int questionid) {
 		this.questionid = questionid;
 	}
-	public int getUsername() {
+	public String getUsername() {
 		return username;
 	}
-	public void setUsername(int username) {
+	public void setUsername(String username) {
 		this.username = username;
 	}
 	public String getTitle() {

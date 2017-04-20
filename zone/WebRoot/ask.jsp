@@ -25,7 +25,7 @@
   
   
 		<script type="text/javascript" src="js/jquery.js"></script>
-		 <script type="text/javascript" src="js/bootstrap.js"></script>
+		<script type="text/javascript" src="js/bootstrap.js"></script>		
 	    <script type="text/javascript" src="js/jquery-migrate-1.2.1.js"></script>
 	    <script type="text/javascript" src="js/jquery.ui.js"></script>	    
 	    <script type="text/javascript" src="js/jquery.validate.js"></script>
@@ -34,8 +34,8 @@
 		<script type="text/javascript" src="js/md5.js"></script>      		
 		<script type="text/javascript" src="uEditor/uEditor.js"></script>
 		<script type="text/javascript" src="js/index.js"></script>
-		<script type="text/javascript" src="js/ask.js"></script>
-        <script type="text/javascript" src="js/bottom.js"></script>
+		<script type="text/javascript" src="js/editQuestion.js"></script>
+        
         
    </head>
 
@@ -62,7 +62,7 @@
 					</li>
 					<li><a href="#">已解决</a>
 					</li>
-					<li><a href="ask/ask.jsp"><span
+					<li><a  id="question_button"><span
 							class="glyphicon glyphicon-plus"></span>提问</a>
 					</li>
 				</ul>
@@ -71,7 +71,8 @@
 		</nav>
 	</div>
 
-	<form id="question" title="提问">
+	
+	<form id="question" title="提问" >
 		<p>
 			<label>问题名称:</label> <input type="text" name="title"
 				style="width: 390px" class="text" id="title" />
@@ -79,7 +80,9 @@
 		<p>
 			<textarea class="uEditorCustom" name="content">请输入问题描述</textarea>
 		</p>
-
+       
+         <p>  <label>积分</label> <input type="text" class="text"  name="question_point" id="question_point"/></p>
+        
 	</form>
 	
 	<c:import url="/common/bottom.do"></c:import>
