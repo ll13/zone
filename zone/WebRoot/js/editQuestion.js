@@ -51,8 +51,9 @@ $(function(){
 							setTimeout(function(){
 								  $("#loading").dialog("close");
 								  $("#question").dialog("close");
+								  $(".uEditor").contents().find(".uEditorButtonHTML").click();
+								  $(".uEditorIframe").contents().find("#iframeBody").html("");
 								  $("#question").resetForm();
-								  $(".uEditorCustom").uEditor();
 								  $("#loading").css("background","url(img/loading.gif) no-repeat 20px center").html("数据交互中.....");
 								 },1000);
 						}

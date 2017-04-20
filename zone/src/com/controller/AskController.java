@@ -1,5 +1,7 @@
 package com.controller;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
@@ -19,7 +21,7 @@ public class AskController {
 	QuestionMapper questionMapper;
 	
 	@RequestMapping("/addQuestion.do")
-	public @ResponseBody String register(String user,String title,String questionContent,String question_point){
+	public @ResponseBody String addQuestion(String user,String title,String questionContent,String question_point){
 		Question question=new Question();
 		question.setUsername(user);
 		question.setTitle(title);
@@ -31,5 +33,14 @@ public class AskController {
 		
 		return "1";
 	}
+	
+	@RequestMapping("/showQuestion.do")
+	public @ResponseBody List<Question> showQuestion(String type,int page){
+		//Question question=new Question();
+		List<Question> questionlist=questionMapper.getAll();
+		
+		
+		return questionlist;
+	} 
 
 }

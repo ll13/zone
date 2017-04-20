@@ -35,8 +35,9 @@
 		<script type="text/javascript" src="uEditor/uEditor.js"></script>
 		<script type="text/javascript" src="js/index.js"></script>
 		<script type="text/javascript" src="js/editQuestion.js"></script>
+        <script type="text/javascript" src="js/showQuestion.js"></script>
         
-        
+   
    </head>
 
 <body>
@@ -69,6 +70,9 @@
 			</div>
 		</div>
 		</nav>
+		
+		<div class="left_main"></div>
+		<div class="right_main"></div>
 	</div>
 
 	
@@ -78,7 +82,7 @@
 				style="width: 390px" class="text" id="title" />
 		</p>
 		<p>
-			<textarea class="uEditorCustom" name="content">请输入问题描述</textarea>
+			<textarea class="uEditorCustom" name="content"></textarea>
 		</p>
        
          <p>  <label>积分</label> <input type="text" class="text"  name="question_point" id="question_point"/></p>
