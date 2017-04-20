@@ -10,7 +10,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
       <result property="title" column="title"/>
       <result property="class_id" column="class_id"/>
       <result property="content" column="content"/>
-      <result property="author_id" column="author_id"/>
+      <result property="author" column="author"/>
       <result property="pubtime" column="pubtime"/>
       <result property="clicknum" column="clicknum"/>
       <result property="collectnum" column="collectnum"/>
@@ -20,8 +20,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   
   
 
-
+<select id="getBlogByAuthor" parameterType="Blog" resultMap="blogmap">
    
- 
+       select * from blog where author=#{author}
+   
+ </select>
  
  </mapper>
