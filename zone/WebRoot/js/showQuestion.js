@@ -26,4 +26,10 @@ $(function(){
    }   
    
    showQuestion();
+   
+  
+   
+   
+   
+   
 });//function 结束

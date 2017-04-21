@@ -8,6 +8,10 @@
 	
 }
 
+#asknav{
+	background:#fff;
+}
+
 #question_button{
 	cursor: pointer;
 }
@@ -43,6 +47,20 @@
 	height:26px;
 }
 
+.left_main{
+	float:left;
+	width:68%;
+	background: #fff;
+	border:1px solid #ccc;
+	border-radius:4px;
+	padding:10px 10px;
+}
 
-
-
+.right_main{
+	float:right;
+	width:30%;
+	background: #fff;
+	border:1px solid #ccc;
+	border-radius:4px;
+	padding:10px 10px;
+}
