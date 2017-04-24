@@ -1,0 +1,25 @@
+#answer{
+	float:left;
+	padding: 0 0 0 15px;
+	
+}
+
+#answer .uEditor{
+	width:600px;
+	heigth:500px;
+}
+
+#answer p{
+	margin: 10px 0;
+	padding: 0;
+}
+
+#answer p label{
+	font-size: 14px;
+	color: #666;
+}
+
+#answer .form_submit_answer_btn{
+	float:right;
+	margin: 10px 10px;
+}

@@ -64,3 +64,44 @@
 	border-radius:4px;
 	padding:10px 10px;
 }
+
+.left_main a:hover{
+	text-decoration:none;
+	
+	
+}
+
+.question_username{
+	display:inline-block;
+	margin: 0 10px;
+	float:left;
+}
+
+.question_point{
+	display:inline-block;
+	float:left;
+	 
+}
+
+.answer_number{
+	float:right;
+}
+
+.question_summary{
+	float:left;
+	clear:both;
+	width: 100%;
+}
+.question_point span{
+	background:#f00;
+}
+
+.queston_share_bar{
+	margin:5px 0 ;
+	float:right;
+}
+
+hr {
+	float: left;
+	width: 100%;
+}

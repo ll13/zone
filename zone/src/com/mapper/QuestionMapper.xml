@@ -27,7 +27,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
    
    </insert>
    
+   <select id="getQuestionbyid" parameterType="Question" resultMap="questionmap">
    
+       select * from question where questionid=#{questionid}
+   </select>
   
    
 </mapper>

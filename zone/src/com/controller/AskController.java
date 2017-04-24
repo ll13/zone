@@ -5,13 +5,13 @@ import java.util.List;
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.mapper.QuestionMapper;
-import com.mapper.UserMapper;
 import com.po.Question;
-import com.po.User;
+
 
 
 @Controller
@@ -42,5 +42,13 @@ public class AskController {
 		
 		return questionlist;
 	} 
-
+	
+	@RequestMapping("/showDetailQuestion.do")
+    public String showDetailQuestion(int questionid,Model model){
+		Question question=new Question();
+		question.setQuestionid(questionid);
+		Question result=questionMapper.getQuestionbyid(question);
+		model.addAttribute("question", result);
+		return "detailQuestion";
+	}
 }

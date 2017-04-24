@@ -7,5 +7,5 @@ public interface QuestionMapper {
 	
 	public List<Question> getAll();
 	public  int insertQuestion(Question question);
-
+    public  Question getQuestionbyid(Question question);
 }
