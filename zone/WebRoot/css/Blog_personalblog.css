@@ -53,3 +53,10 @@ body{
 	height:20px;
 	text-align:center;
 }
+.main_right{
+	width:80%;
+	height:100%;
+	float:right;
+	
+	border:1px solid #CCCCCC;
+}
