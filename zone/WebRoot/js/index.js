@@ -67,7 +67,7 @@ $(function(){
 	}
 	
 	$("#logout_a").click(function(){
-		alert(123);
+		alert("用户退出");
 		$.cookie("user",null);
 		window.location.href="/zone/";
 	});

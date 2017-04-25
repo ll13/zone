@@ -6,7 +6,6 @@ public class Answer {
 	private  int answerid;
 	private  int questionid;
 	private  String username;
-	private  String title;
 	private  String content;
 	private  Date date;
 	
@@ -29,12 +28,7 @@ public class Answer {
 	public void setUsername(String username) {
 		this.username = username;
 	}
-	public String getTitle() {
-		return title;
-	}
-	public void setTitle(String title) {
-		this.title = title;
-	}
+
 	public String getContent() {
 		return content;
 	}

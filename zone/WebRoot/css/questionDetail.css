@@ -23,3 +23,29 @@
 	float:right;
 	margin: 10px 10px;
 }
+
+.answerlist{
+	float:left;
+}
+
+.answerlist .answer_username{
+	display:inline-block;
+	margin: 0 10px;
+	float:left;
+}
+
+.answerContent{
+	float:left;
+	clear:both;
+	width: 100%;
+	margin: 20px 10px;
+	
+}
+
+.answerlist {
+	display:inline-block;
+	width:100%;
+	
+}
+
+

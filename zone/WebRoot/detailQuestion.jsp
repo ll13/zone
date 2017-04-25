@@ -30,8 +30,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       <script type="text/javascript" src="js/md5.js"></script>      		
       <script type="text/javascript" src="uEditor/uEditor.js"></script>
 	  <script type="text/javascript" src="js/index.js"></script>
+	  <script type="text/javascript" src="js/editQuestion.js"></script>
 	  <script type="text/javascript" src="js/detailQuestion.js"></script>
-
+      
   </head>
   
   <body>
@@ -53,8 +54,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</li>
 					<li><a href="#">已解决</a>
 					</li>
-					<li><a  id="question_button"><span
-							class="glyphicon glyphicon-plus"></span>提问</a>
+					<li><a  id="question_button">
+					       <span class="glyphicon glyphicon-plus"></span>提问
+					    </a>
 					</li>
 				</ul>
 			</div>
@@ -62,7 +64,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</nav>
 		
 		<div class="left_main">
-		    <div class='question_username'>  ${question.username}<a href='#'></a>发表于    ${question.date}</div>
+		    <div class='question_username'> <a href='#'> ${question.username}</a>发表于    ${question.date}</div>
 		    <div class='question_point'>积分<span class='badge '>42</span></div>
 		    <div class='answer_number'>回答15</div>
 		    <div class='question_summary'>
@@ -74,11 +76,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		    <div class='queston_share_bar'><em>浏览数 10</em><span>|</span><em>收藏数10</em></div>
 		    <hr noshade='noshade' size='1' />
 		    
-		    <div class='answerlist'></div>
+		    <div class='answerlist'>
+		       <c:forEach items="${answerlist}" var="answer">
+		           <div class="answerlist_answer">
+		           <div class='answer_username'> <a href='#'> ${answer.username}</a>&nbsp;&nbsp;    ${answer.date}</div>
+		           <div class='answerContent'>
+		             ${answer.content}
+		           </div>
+		           <hr noshade='noshade' class="answerlistLine" size='1' />
+		           </div>
+		       </c:forEach>
+		    </div>
+		    
+		    
 		    <div class='answerEdit'>
 		       <form id="answer" class="answer" title="回答" >
-		         <p><textarea class="uEditorCustom" name="content"></textarea></p>
-		         <input type="submit" value="我要回答" class=" btn btn-primary form_submit_answer_btn">
+		         <input type='hidden' class="question_id" name='questionid' value="${questionid}"/>
+		         <input type='hidden' name='username' class="username" value=""/>
+		         <p><textarea class="uEditorCustom" ></textarea></p>
+		         <input type="button" value="我要回答" id="answerQuestionbtn" class=" btn btn-primary form_submit_answer_btn">
 		       </form>
 		    
 		    
@@ -98,6 +114,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</div>
 	</div>
 
+    <form id="question" title="提问" >
+		<p>
+			<label>问题名称:</label> <input type="text" name="title"
+				style="width: 390px" class="text" id="title" />
+		</p>
+		<p>
+			<textarea class="uEditorCustom" name="content"></textarea>
+		</p>
+       
+         <p>  <label>积分</label> <input type="text" class="text"  name="question_point" id="question_point"/></p>
+        
+	</form>
 	
 	
 	

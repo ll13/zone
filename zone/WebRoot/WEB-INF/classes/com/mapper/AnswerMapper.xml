@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.AnswerMapper">
+   
+   
+   <resultMap type="Answer" id="answermap">
+      <result property="answerid" column="answerid"/>
+      <result property="questionid" column="questionid"/>
+      <result property="username" column="username"/>
+      <result property="content" column="content"/>
+      <result property="date" column="date"/>
+   </resultMap>
+   
+   
+  
+   
+ 
+   
+    <insert id="insertAnswer" parameterType="answer" >
+       insert into answer (questionid,username,content,date) values(#{questionid},#{username},#{content},now())
+   
+   </insert>
+   
+   <select id="getAnswerbyqid" parameterType="answer" resultMap="answermap">
+   
+       select * from answer where questionid=#{questionid}
+   </select>
+  
+   
+</mapper>

@@ -9,6 +9,9 @@ public class Question {
 	private String content;
 	private String point;
 	private Date date;
+	private int answernum;
+	private int browsenum;
+	private int collectnum;
 	
 	
 	public int getQuestionid() {
@@ -46,6 +49,34 @@ public class Question {
 	}
 	public void setDate(Date date) {
 		this.date = date;
+	}
+	public int getAnswernum() {
+		return answernum;
+	}
+	public void setAnswernum(int answernum) {
+		this.answernum = answernum;
+	}
+	public int getBrowsenum() {
+		return browsenum;
+	}
+	public void setBrowsenum(int browsenum) {
+		this.browsenum = browsenum;
+	}
+	public int getCollectnum() {
+		return collectnum;
+	}
+	public void setCollectnum(int collectnum) {
+		this.collectnum = collectnum;
+	}
+	
+	
+	@Override
+	public String toString() {
+		return "Question [questionid=" + questionid + ", username=" + username
+				+ ", title=" + title + ", content=" + content + ", point="
+				+ point + ", date=" + date + ", answernum=" + answernum
+				+ ", browsenum=" + browsenum + ", collectnum=" + collectnum
+				+ "]";
 	}
      
      
