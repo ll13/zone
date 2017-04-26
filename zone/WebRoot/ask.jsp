@@ -55,7 +55,7 @@
 			</div>
 			<div>
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">全部问答</a>
+					<li class="active"><a href="ask.jsp">全部问答</a>
 					</li>
 					<li><a href="#">悬赏</a>
 					</li>
@@ -63,7 +63,7 @@
 					</li>
 					<li><a href="#">已解决</a>
 					</li>
-					<li><a  id="question_button"><span
+					<li><a  id="question_button"  "><span
 							class="glyphicon glyphicon-plus"></span>提问</a>
 					</li>
 				</ul>

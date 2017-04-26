@@ -1,14 +1,43 @@
 $(function(){
+	//加载更多问题
+	$(".left_main").append("<input type='button' value='加载更多问题' id='loadmorequestion' " +
+			"class='btn btn-primary '>" +
+			"<input type='hidden' name='currenpage' class='currenpage' value='1'/>" +
+			"<input type='hidden' name='loadtype' class='loadtype' value='all'/>" +
+					"<input type='hidden' name='totalpage' class='totalpage' value=''/>");
 	
+	
+	
+	
+	function checkloadmorequestion(){
+		$.ajax({
+			url:"getQuestionTotalPage.do",
+			type:"POST",
+			success:function(responseText,statusText){
+				$(".left_main .totalpage").val(responseText);
+				alert($(".left_main .totalpage").val())
+				var currenpage=$(".left_main .currenpage").val();
+				var totalpage=$(".left_main .totalpage").val();
+				if(currenpage>=totalpage){
+					$(".left_main #loadmorequestion").hide();
+					
+				}else{
+					//显示加载更多问题
+				}
+			}
+		});
+		
+		
+	}
    
-   function showQuestion(type,keyword){
+   function showQuestion(type,keyword,page){
 	   $.ajax({
 		  url:"showQuestion.do",
 		  type:"POST",
 		  data:{
 			  keyword:keyword,
-			  page:1,
-			  type:'all',
+			  page:page,
+			  type:type,
 		        },
 		  success:function(response,status,xhr){
 				 var html="";
@@ -43,14 +72,37 @@ $(function(){
 							"<div class='queston_share_bar'><em>浏览数 10</em><span>|</span><em>收藏数10</em></div>"+
 							"<hr noshade='noshade' size='1' />";
 				 });
-				 $(".left_main").append(html);
+				 $("#loadmorequestion").before(html);
+				 
 				 
 	        }
 	   });
-   }   
+   }  
    
-   showQuestion();
    
+   
+   
+   $("#loadmorequestion").click(function(){
+	   $("#loadmorequestion").html("<img src='img/more_load.gif'/>");
+	   
+	  var currenpage=parseInt($(".left_main .currenpage").val()) ;
+	  currenpage=currenpage+1;
+	  $(".left_main .currenpage").val(currenpage);
+	  var loadtype=$(".left_main .loadtype").val();
+	   showQuestion(loadtype,"",currenpage);
+	   
+	   checkloadmorequestion();
+   });
+   
+   
+   
+   
+   
+   
+   
+   
+   showQuestion("all","","1");
+   checkloadmorequestion();
   
    
    

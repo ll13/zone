@@ -46,7 +46,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 			<div>
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">全部问答</a>
+					<li class="active"><a href="ask.jsp">全部问答</a>
 					</li>
 					<li><a href="#">悬赏</a>
 					</li>

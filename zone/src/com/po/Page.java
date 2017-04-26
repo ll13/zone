@@ -2,12 +2,13 @@ package com.po;
 
 public class Page {
 	
-	private int start;         //ÆğÊ¼Êı
-	private int pageSize;    //Ã¿Ò³ÌõÊı
-	private int currentPage;   //µ±Ç°Ò³
-	private int totalPage;     //×ÜÒ³Êı
-	private int totalRow;
+	private int start;         //å¼€å§‹æ¡æ•°
+	private int pageSize;    //æ¯é¡µå¤§å°
+	private int currentPage;   //å½“å‰é¡µæ•°
+	private int totalPage;     //æ€»é¡µæ•°
+	private int totalRow;      //æ€»æ¡æ•°
 	public int getStart() {
+		start=(currentPage-1)*pageSize;
 		return start;
 	}
 	public void setStart(int start) {
@@ -38,7 +39,10 @@ public class Page {
 		this.totalRow = totalRow;
 	} 
 	
-	
+	public static int calculateTotalPage(int totalRow,int pageSize){
+		int totalPage=totalRow%pageSize==0?totalRow/pageSize:totalRow/pageSize+1;
+		return totalPage;
+	}
 	
 	
 

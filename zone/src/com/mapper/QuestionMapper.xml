@@ -17,9 +17,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
    
   
    
-   <select id="getAll"  resultMap="questionmap">
+   <select id="getQuestionbyPage" parameterType="Question"   resultMap="questionmap">
    
-       select * from question 
+       select * from question limit #{start},#{pageSize}
    </select>
    
     <insert id="insertQuestion" parameterType="Question" >
@@ -30,6 +30,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
    <select id="getQuestionbyid" parameterType="Question" resultMap="questionmap">
    
        select * from question where questionid=#{questionid}
+   </select>
+  
+   <select id="getQuestionTotalRow" resultType="int">
+       select count(*) from question;
+   
    </select>
   
    

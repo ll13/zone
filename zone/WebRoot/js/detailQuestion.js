@@ -22,11 +22,14 @@ $(function(){
 					 
 				  },
 				success:function(responseText,statusText){
-					 $("#answerQuestionbtn").attr('disabled',"false");
+					 $("#answerQuestionbtn").removeAttr("disabled");
+					
 					 $("#loading").css("background","url(img/success.gif) no-repeat 20px center").html("数据新增成功...");
 					 
 					 setTimeout(function(){
 						var date=new Date();
+						var content=$(".answerEdit .uEditorIframe").contents().find("#iframeBody").html();
+						$(".answerEdit .uEditorIframe").contents().find("#iframeBody").html("");
 						$("#loading").dialog("close");
 						$(".answerlist").prepend("<div class='answerlist_answer'>" +
 								                     " <div class='answer_username'>" +
@@ -34,12 +37,14 @@ $(function(){
 								                         date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate()+
 								                      "</div>"+
 								                       "<div class='answerContent'>" +   
-								                       $(".answerEdit .uEditorIframe").contents().find("#iframeBody").html()+							                     
-						                                "</div><hr noshade='noshade' class='answerlistLine' size='1' />" +
+								                       content+
+								                       "</div><hr noshade='noshade' class='answerlistLine' size='1' />" +
 						                            "</div>"); 
 								                         
 								
 					 },1000);
+					 
+					 
 				}  
 				  
 				

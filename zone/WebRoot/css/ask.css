@@ -68,8 +68,13 @@
 .left_main a:hover{
 	text-decoration:none;
 	
-	
 }
+
+.left_main #loadmorequestion{
+	float:left;
+	width:100%;
+}
+
 
 .question_username{
 	display:inline-block;
@@ -105,3 +110,6 @@ hr {
 	float: left;
 	width: 100%;
 }
+
+
+

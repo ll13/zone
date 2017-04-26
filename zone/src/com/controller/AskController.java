@@ -13,6 +13,7 @@ import com.mapper.AnswerMapper;
 import com.mapper.QuestionMapper;
 import com.po.Answer;
 import com.po.Question;
+import com.util.Cache;
 
 
 
@@ -23,6 +24,10 @@ public class AskController {
 	QuestionMapper questionMapper;
 	@Resource(name="answerMapper")
 	AnswerMapper answerMapper;
+	
+	int questionPageSize=3;
+	
+	
 	
 	@RequestMapping("/addQuestion.do")
 	public @ResponseBody String addQuestion(String user,String title,String questionContent,String question_point){
@@ -38,10 +43,34 @@ public class AskController {
 		return "1";
 	}
 	
+	@RequestMapping("/getQuestionTotalPage.do")
+	public @ResponseBody String getQuestionTotalPage(){
+		Cache cache=Cache.getInstance();
+		int totalRow;
+		if(cache.getElementbyKey("questionPage")==null){
+		 totalRow=questionMapper.getQuestionTotalRow();
+		 Question questionPage=new Question();
+	     questionPage.setTotalRow(totalRow);
+	     cache.putElementbyKey("questionPage", questionPage);
+		}else{
+		  totalRow=((Question)cache.getElementbyKey("questionPage")).getTotalRow();	
+		}
+		int totalPage=Question.calculateTotalPage(totalRow, questionPageSize);
+		
+		
+		
+		return ""+totalPage;
+	}
+	
+	
+	
 	@RequestMapping("/showQuestion.do")
-	public @ResponseBody List<Question> showQuestion(String type,int page){
-		//Question question=new Question();
-		List<Question> questionlist=questionMapper.getAll();
+	public @ResponseBody List<Question> showQuestion(String type,String keyword,int page){
+		Question question=new Question();
+		question.setPageSize(questionPageSize);		
+		question.setCurrentPage(page);
+		
+		List<Question> questionlist=questionMapper.getQuestionbyPage(question);
 		
 		
 		return questionlist;

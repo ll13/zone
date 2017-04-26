@@ -2,7 +2,7 @@ package com.po;
 
 import java.sql.Date;
 
-public class Question {
+public class Question extends Page{
 	private int questionid;
 	private String username;
 	private String title;
@@ -68,8 +68,6 @@ public class Question {
 	public void setCollectnum(int collectnum) {
 		this.collectnum = collectnum;
 	}
-	
-	
 	@Override
 	public String toString() {
 		return "Question [questionid=" + questionid + ", username=" + username
@@ -78,6 +76,9 @@ public class Question {
 				+ ", browsenum=" + browsenum + ", collectnum=" + collectnum
 				+ "]";
 	}
+	
+	
+	
      
      
      
