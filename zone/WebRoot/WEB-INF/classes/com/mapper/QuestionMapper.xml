@@ -76,4 +76,20 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
    
    </select>
    
+   <update id="updateBrowsenum" parameterType="Question"  >
+       update question SET browsenum=browsenum+1 where questionid=#{questionid}
+   </update>
+   
+   <update id="updateAnswernum" parameterType="Question"  >
+       update question SET answernum=answernum+1 where questionid=#{questionid}
+   </update>
+   
+   <update id="addCollectnum" parameterType="Question"  >
+       update question SET collectnum=collectnum+1 where questionid=#{questionid}
+   </update>
+   
+   <update id="delectCollectnum" parameterType="Question"  >
+       update question SET collectnum=collectnum-1 where questionid=#{questionid}
+   </update>
+   
 </mapper>

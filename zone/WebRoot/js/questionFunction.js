@@ -140,12 +140,18 @@ $(function(){
 				 });
 				 $("#loadmorequestion").before(html);
 				 
-				 
+				 var list=$(".question_point .badge");
+				 for(var i=0;i<list.length;i++){
+					 
+					 if($(list[i]).html()=="0"){
+						 $(list[i]).parent(".question_point").hide();
+					 }
+				 }
 	        }
 	   });
    }  
    
-   
+  
  
    
    function replacePos(str,pos,replaceText){

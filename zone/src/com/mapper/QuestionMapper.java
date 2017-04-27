@@ -17,5 +17,8 @@ public interface QuestionMapper {
     public  int getQuestionTotalRowNoAnswer();
     public  int getQuestionTotalRowAnswer();
     public  int getIdbyTitle(Question question);
-    
+    public  int updateBrowsenum(Question question);
+    public  int updateAnswernum(Question question);
+    public  int addCollectnum(Question question);
+    public  int delectCollectnum(Question question);
 }

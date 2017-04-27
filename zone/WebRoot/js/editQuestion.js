@@ -5,7 +5,7 @@ $(function(){
 	$("#question_button").click(function(){
 		if($.cookie("user")){
 			$("#question").dialog("open");
-			$(".uEditor").contents().find(".uEditorButtonHTML").click();
+			
 		}
 		else
 		{
@@ -29,6 +29,7 @@ $(function(){
 		height:400,
 		buttons:{
           "提交":function(){
+        	  
         	  var content=$(".uEditorIframe").contents().find("#iframeBody").html();
 				$(this).ajaxSubmit({
 					url:"addQuestion.do",
@@ -78,6 +79,14 @@ $(function(){
 								"<div class='queston_share_bar'><em>浏览数  0</em><span>|</span><em>收藏数 0</em></div>"+
 								"<hr noshade='noshade' size='1' />";
 							 $("#loadmorequestion").before(html);
+							 
+							 var list=$(".question_point .badge");
+							 for(var i=0;i<list.length;i++){
+								 
+								 if($(list[i]).html()=="0"){
+									 $(list[i]).parent(".question_point").hide();
+								 }
+							 }
 							
 							setTimeout(function(){
 								  $("#loading").dialog("close");

@@ -73,7 +73,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		          ${question.content}
 		       </div>
 		    </div>
-		    <div class='queston_share_bar'><em>浏览数 ${question.browsenum}</em><span>|</span><em>收藏数 ${question.collectnum} </em></div>
+		    <div class='queston_share_bar'><a>浏览 <em>${question.browsenum}</em></a><span>|</span><a class="collectQuestion" select="unselect">收藏  <em> ${question.collectnum} </em></a> </div>
 		    <hr noshade='noshade' size='1' />
 		    
 		    <div class='answerlist'>

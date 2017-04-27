@@ -39,18 +39,13 @@ $(function(){
 								                       "<div class='answerContent'>" +   
 								                       content+
 								                       "</div><hr noshade='noshade' class='answerlistLine' size='1' />" +
-						                            "</div>"); 
-								                         
-								
-					 },1000);
-					 
-					 
-				}  
+						                            "</div>"); 								
+					  },1000);
+		 
+				  }  
 				  
 				
-			 });
-			
-			
+			  });
 			
 		}else{
 		  $("#error").dialog("open");
@@ -62,10 +57,41 @@ $(function(){
 		 }
 			
 		
-		
-		
-		
+	});//click函数结束
+	
+	$(".left_main .collectQuestion").click(function(){
+		var flag=this.getAttribute("select");
+		if(flag=="unselect"){
+			this.setAttribute("select","selected");
+			var num=Number($(".left_main .collectQuestion em").html())+1;
+			var value="已收藏<em>"+num+"</em>";
+			var questionid=$(".question_id").val();
+			$(this).html(value);
+			$.ajax({
+				url:"addCollectnum.do",
+				type:"POST",
+				data:{
+					questionid:questionid,
+				},
+			});	
+		}else{
+			this.setAttribute("select","unselect");
+			var num=Number($(".left_main .collectQuestion em").html())-1;
+			var value="收藏<em>"+num+"</em>";
+			var questionid=$(".question_id").val();
+			$(this).html(value);
+			$.ajax({
+				url:"delectCollectnum.do",
+				type:"POST",
+				data:{
+					questionid:questionid,
+				},
+			});	
+			
+		}
 	});
+	
+	
 	
 	$(".uEditorCustom").uEditor();
 });//function 结束

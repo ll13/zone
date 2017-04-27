@@ -106,7 +106,10 @@ public class AskController {
     public String showDetailQuestion(int questionid,Model model){
 		Question question=new Question();
 		question.setQuestionid(questionid);
-		Question resultQuestion=questionMapper.getQuestionbyid(question);
+		
+		Question resultQuestion=questionMapper.getQuestionbyid(question);		
+		questionMapper.updateBrowsenum(question);
+		
 		model.addAttribute("question", resultQuestion);
 		
 		Answer answer=new Answer();
@@ -124,6 +127,11 @@ public class AskController {
 		answer.setQuestionid(questionid);
 		answer.setUsername(username);
 		answer.setContent(content);
+		
+		Question question=new Question();
+		question.setQuestionid(questionid);
+		questionMapper.updateAnswernum(question);
+		
 		int result=answerMapper.insertAnswer(answer);
 		if(result==1){
 			return "1";
@@ -131,6 +139,20 @@ public class AskController {
 		return "0";
 	}
 	
+	@RequestMapping("/addCollectnum.do")
+	public @ResponseBody String addCollectnum(String questionid){
+		Question question=new Question();
+		question.setQuestionid(Integer.parseInt(questionid));
+		questionMapper.addCollectnum(question);
+		return "1";
+	}
 	
+	@RequestMapping("/delectCollectnum.do")
+	public @ResponseBody String delectCollectnum(String questionid){
+		Question question=new Question();
+		question.setQuestionid(Integer.parseInt(questionid));
+		questionMapper.delectCollectnum(question);
+		return "1";
+	}
 	
 }
