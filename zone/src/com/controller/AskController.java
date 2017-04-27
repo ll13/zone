@@ -39,21 +39,34 @@ public class AskController {
 		
 		
 		questionMapper.insertQuestion(question);
-		
-		return "1";
+		String questionid=questionMapper.getIdbyTitle(question)+"";
+		return questionid;
 	}
 	
 	@RequestMapping("/getQuestionTotalPage.do")
-	public @ResponseBody String getQuestionTotalPage(){
+	public @ResponseBody String getQuestionTotalPage(String type){
 		Cache cache=Cache.getInstance();
-		int totalRow;
-		if(cache.getElementbyKey("questionPage")==null){
-		 totalRow=questionMapper.getQuestionTotalRow();
+		int totalRow=0;
+		if(cache.getElementbyKey("questionPage"+type)==null){
+		 
 		 Question questionPage=new Question();
-	     questionPage.setTotalRow(totalRow);
-	     cache.putElementbyKey("questionPage", questionPage);
+		
+		 if(type.equals("all")){
+			 totalRow=questionMapper.getQuestionTotalRow();
+	     }
+		 if(type.equals("point")){
+			 totalRow=questionMapper.getQuestionTotalRowPoint();
+		 }
+		 if(type.equals("noanswer")){
+			 totalRow=questionMapper.getQuestionTotalRowNoAnswer();
+		 }
+		 if(type.equals("answer")){
+			 totalRow=questionMapper.getQuestionTotalRowAnswer();
+		 }
+		 questionPage.setTotalRow(totalRow);
+	     cache.putElementbyKey("questionPage"+type, questionPage);
 		}else{
-		  totalRow=((Question)cache.getElementbyKey("questionPage")).getTotalRow();	
+		  totalRow=((Question)cache.getElementbyKey("questionPage"+type)).getTotalRow();	
 		}
 		int totalPage=Question.calculateTotalPage(totalRow, questionPageSize);
 		
@@ -69,8 +82,21 @@ public class AskController {
 		Question question=new Question();
 		question.setPageSize(questionPageSize);		
 		question.setCurrentPage(page);
+		List<Question> questionlist=null;
 		
-		List<Question> questionlist=questionMapper.getQuestionbyPage(question);
+		if(type.equals("all")){
+			 questionlist=questionMapper.getQuestionbyPage(question);
+		}
+		if(type.equals("point")){
+			questionlist=questionMapper.getQuestionWithPoint(question);
+		}
+        if(type.equals("noanswer")){
+        	questionlist=questionMapper.getQuestionWithNoAnswer(question);
+		}
+        if(type.equals("answer")){
+        	questionlist=questionMapper.getQuestionHaveAnswer(question);
+		}
+        
 		
 		
 		return questionlist;

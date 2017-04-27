@@ -33,10 +33,9 @@
 	    <script type="text/javascript" src="js/jquery.cookie.js"></script>
 		<script type="text/javascript" src="js/md5.js"></script>      		
 		<script type="text/javascript" src="uEditor/uEditor.js"></script>
-		<script type="text/javascript" src="js/index.js"></script>
-		<script type="text/javascript" src="js/editQuestion.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>		
         <script type="text/javascript" src="js/showQuestion.js"></script>
-        
+        <script type="text/javascript" src="js/editQuestion.js"></script>
    
    </head>
 
@@ -51,17 +50,17 @@
 		<nav class="navbar navbar-default" role="navigation" id="asknav">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="#">问答</a>
+				<a class="navbar-brand" href="ask.jsp">问答</a>
 			</div>
 			<div>
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="ask.jsp">全部问答</a>
 					</li>
-					<li><a href="#">悬赏</a>
+					<li id="Question_Point"><a id="showQuestionWithPoint" >悬赏</a>
 					</li>
-					<li><a href="#">无悬赏</a>
+					<li id="Question_NoAnswer"><a id="showQuestionWithNoAnswer" >未回答</a>
 					</li>
-					<li><a href="#">已解决</a>
+					<li id="Question_Answer"><a id="showQuestionWithAnswer">已解决</a>
 					</li>
 					<li><a  id="question_button"  "><span
 							class="glyphicon glyphicon-plus"></span>提问</a>

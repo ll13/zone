@@ -5,8 +5,17 @@ import java.util.List;
 import com.po.Question;
 public interface QuestionMapper {
 	
-	public List<Question> getQuestionbyPage(Question question);
+	
 	public  int insertQuestion(Question question);
-    public  Question getQuestionbyid(Question question);
+    public  Question getQuestionbyid(Question question);  
+    public List<Question> getQuestionbyPage(Question question);
+    public List<Question> getQuestionWithPoint(Question question);
+    public List<Question> getQuestionWithNoAnswer(Question question);
+    public List<Question> getQuestionHaveAnswer(Question question);
     public  int getQuestionTotalRow();
+    public  int getQuestionTotalRowPoint();
+    public  int getQuestionTotalRowNoAnswer();
+    public  int getQuestionTotalRowAnswer();
+    public  int getIdbyTitle(Question question);
+    
 }

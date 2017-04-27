@@ -12,9 +12,12 @@
 	background:#fff;
 }
 
-#question_button{
+
+
+#question_button,#showQuestionWithPoint,#showQuestionWithNoAnswer,#showQuestionWithAnswer{
 	cursor: pointer;
 }
+
 
 #question{
 	padding: 15px 0 0 15px;

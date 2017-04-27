@@ -12,6 +12,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
       <result property="content" column="content"/>
       <result property="point" column="point"/>
       <result property="date" column="date"/>
+      <result property="answernum" column="answernum"/>
+      <result property="browsenum" column="browsenum"/>
+      <result property="collectnum" column="collectnum"/>
    </resultMap>
    
    
@@ -21,6 +24,22 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
    
        select * from question limit #{start},#{pageSize}
    </select>
+   
+   <select id="getQuestionWithPoint" parameterType="Question"   resultMap="questionmap">
+   
+       select * from question where point>0 limit #{start},#{pageSize}
+   </select>
+   
+   <select id="getQuestionWithNoAnswer" parameterType="Question"   resultMap="questionmap">
+   
+       select * from question where answernum=0 limit #{start},#{pageSize}
+   </select>
+   
+   <select id="getQuestionHaveAnswer" parameterType="Question"   resultMap="questionmap">
+   
+       select * from question where answernum>0 limit #{start},#{pageSize}
+   </select>
+   
    
     <insert id="insertQuestion" parameterType="Question" >
        insert into question (username,title,content,point,date) values(#{username},#{title},#{content},#{point},now())
@@ -37,5 +56,24 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
    
    </select>
   
+   <select id="getQuestionTotalRowPoint" resultType="int">
+       select count(*) from question where point>0;
+   
+   </select>
+   
+   <select id="getQuestionTotalRowNoAnswer" resultType="int">
+       select count(*) from question where answernum=0;
+   
+   </select>
+   
+   <select id="getQuestionTotalRowAnswer" resultType="int">
+       select count(*) from question where answernum>0;
+   
+   </select>
+   
+   <select id="getIdbyTitle" resultType="int">
+       select questionid from question where title=#{title};
+   
+   </select>
    
 </mapper>

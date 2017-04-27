@@ -31,6 +31,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       <script type="text/javascript" src="uEditor/uEditor.js"></script>
 	  <script type="text/javascript" src="js/index.js"></script>
 	  <script type="text/javascript" src="js/editQuestion.js"></script>
+	  <script type="text/javascript" src="js/showQuestion.js"></script>
 	  <script type="text/javascript" src="js/detailQuestion.js"></script>
       
   </head>
@@ -42,21 +43,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<nav class="navbar navbar-default" role="navigation" id="asknav">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="#">问答</a>
+				<a class="navbar-brand" href="ask.jsp">问答</a>
 			</div>
 			<div>
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="ask.jsp">全部问答</a>
 					</li>
-					<li><a href="#">悬赏</a>
+					<li id="Question_Point"><a id="showQuestionWithPoint" >悬赏</a>
 					</li>
-					<li><a href="#">无悬赏</a>
+					<li id="Question_NoAnswer"><a id="showQuestionWithNoAnswer" >未回答</a>
 					</li>
-					<li><a href="#">已解决</a>
+					<li id="Question_Answer"><a id="showQuestionWithAnswer">已解决</a>
 					</li>
-					<li><a  id="question_button">
-					       <span class="glyphicon glyphicon-plus"></span>提问
-					    </a>
+					<li><a  id="question_button"  "><span
+							class="glyphicon glyphicon-plus"></span>提问</a>
 					</li>
 				</ul>
 			</div>
@@ -65,15 +65,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		
 		<div class="left_main">
 		    <div class='question_username'> <a href='#'> ${question.username}</a>发表于    ${question.date}</div>
-		    <div class='question_point'>积分<span class='badge '>42</span></div>
-		    <div class='answer_number'>回答15</div>
+		    <div class='question_point'>积分<span class='badge '>${question.point} </span></div>
+		    <div class='answer_number'>回答 ${question.answernum} </div>
 		    <div class='question_summary'>
 		       <h3>${question.title}</h3>
 		       <div class='questionlistcss'>
 		          ${question.content}
 		       </div>
 		    </div>
-		    <div class='queston_share_bar'><em>浏览数 10</em><span>|</span><em>收藏数10</em></div>
+		    <div class='queston_share_bar'><em>浏览数 ${question.browsenum}</em><span>|</span><em>收藏数 ${question.collectnum} </em></div>
 		    <hr noshade='noshade' size='1' />
 		    
 		    <div class='answerlist'>
