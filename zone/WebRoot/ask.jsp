@@ -34,8 +34,11 @@
 		<script type="text/javascript" src="js/md5.js"></script>      		
 		<script type="text/javascript" src="uEditor/uEditor.js"></script>
 		<script type="text/javascript" src="js/index.js"></script>		
-        <script type="text/javascript" src="js/showQuestion.js"></script>
+        <script type="text/javascript" src="js/questionFunction.js"></script>
         <script type="text/javascript" src="js/editQuestion.js"></script>
+        <script type="text/javascript" src="js/showAllQuestion.js"></script>
+      
+   
    
    </head>
 

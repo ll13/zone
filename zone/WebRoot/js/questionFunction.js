@@ -45,7 +45,7 @@ $(function(){
 		checkloadmorequestion(type);
 	});
 	
-	
+});//function 结束
 	
 	//加载更多问题
 	function loadmorequestion(){
@@ -146,6 +146,11 @@ $(function(){
    }  
    
    
+ 
+   
+   function replacePos(str,pos,replaceText){
+		return str.substr(0,pos-1)+replaceText+str.substring(pos,str.length);
+	} 
    
    
    
@@ -154,19 +159,12 @@ $(function(){
    
    
    
-   
-   
-   loadmorequestion();
-   showQuestion("all","","1");
-   checkloadmorequestion("all");
   
    
    
    
    
-});//function 结束
 
 
-function replacePos(str,pos,replaceText){
-	return str.substr(0,pos-1)+replaceText+str.substring(pos,str.length);
-}
+
+

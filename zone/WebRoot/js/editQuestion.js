@@ -5,7 +5,7 @@ $(function(){
 	$("#question_button").click(function(){
 		if($.cookie("user")){
 			$("#question").dialog("open");
-			
+			$(".uEditor").contents().find(".uEditorButtonHTML").click();
 		}
 		else
 		{
@@ -104,6 +104,3 @@ $(function(){
 	
 });//function 结束
 
-function replacePos(str,pos,replaceText){
-	return str.substr(0,pos-1)+replaceText+str.substring(pos,str.length);
-}
