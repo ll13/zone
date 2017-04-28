@@ -95,6 +95,22 @@ $(function(){
 		
 	}
    
+	function showHotQuestion(){
+		$.ajax({
+			url:"showHotQuestion.do",
+			type:"POST",
+			success:function(response,status,xhr){
+				var list=$("#hotquestion li");
+				
+				 $.each(response,function(index,value){	
+				     $(list[index]).append("<a href=showDetailQuestion.do?questionid="+value.questionid +">"+value.title+"</a>");
+			  
+				});
+			 }
+		});
+	}
+	
+	
    function showQuestion(type,keyword,page){
 	   $.ajax({
 		  url:"showQuestion.do",

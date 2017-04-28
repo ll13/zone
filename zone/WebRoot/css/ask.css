@@ -114,5 +114,17 @@ hr {
 	width: 100%;
 }
 
+#hotquestion li{
+	border-bottom: 1px solid #f0f0f0;
+    line-height: 35px;
+}
 
+#hotquestion li a{
+	text-decoration: none;
+	color: #666;
+}
 
+#hotquestion li a:hover{
+	
+	color: red;
+}

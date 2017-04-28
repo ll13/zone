@@ -75,6 +75,12 @@ public class AskController {
 		return ""+totalPage;
 	}
 	
+	@RequestMapping("/showHotQuestion.do")
+	public @ResponseBody List<Question> showHotQuestion(){
+		List<Question> questionlist=null;	
+		 questionlist=questionMapper.gethotQuestion();
+		 return questionlist;
+	}
 	
 	
 	@RequestMapping("/showQuestion.do")

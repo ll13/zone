@@ -40,6 +40,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
        select * from question where answernum>0 limit #{start},#{pageSize}
    </select>
    
+    <select id="gethotQuestion"  resultMap="questionmap">
+   
+       select * from question order by browsenum DESC limit 0,5
+   </select>
+   
    
     <insert id="insertQuestion" parameterType="Question" >
        insert into question (username,title,content,point,date) values(#{username},#{title},#{content},#{point},now())

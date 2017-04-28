@@ -77,11 +77,11 @@
 		<div class="right_main">
 		   <div id="hotquestion">
 		     <h4>热门问答</h4>
-		     <li>问题1</li><hr noshade='noshade' size='1'/>
-		     <li>问题2</li><hr noshade='noshade' size='1'/>
-		     <li>问题3</li><hr noshade='noshade' size='1'/>
-		     <li>问题4</li><hr noshade='noshade' size='1'/>
-		     <li>问题5</li><hr noshade='noshade' size='1'/>
+		     <li></li><hr noshade='noshade' size='1'/>
+		     <li></li><hr noshade='noshade' size='1'/>
+		     <li></li><hr noshade='noshade' size='1'/>
+		     <li></li><hr noshade='noshade' size='1'/>
+		     <li></li><hr noshade='noshade' size='1'/>
 		   </div>
 		</div>
 	</div>

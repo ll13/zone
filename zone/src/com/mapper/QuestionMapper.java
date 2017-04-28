@@ -21,4 +21,6 @@ public interface QuestionMapper {
     public  int updateAnswernum(Question question);
     public  int addCollectnum(Question question);
     public  int delectCollectnum(Question question);
+    public  List<Question> gethotQuestion();
+    
 }
