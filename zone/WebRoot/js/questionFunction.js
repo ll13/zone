@@ -45,6 +45,39 @@ $(function(){
 		checkloadmorequestion(type);
 	});
 	
+	$("#showMyQueston").click(function(){
+		if($.cookie("user")){
+			$("#main nav li").removeClass("active");
+			$("#myQuestion").addClass("active");
+			$(".left_main").html("");
+			
+			loadmorequestion();
+			
+			var type="myquestion";
+			var page="1";
+			var username=$.cookie("user");
+			$(".left_main .loadtype").val(type);
+			$(".left_main .currenpage").val(page);
+			showQuestion(type,"",page,username);				
+			checkloadmorequestion(type);
+			
+		}
+		else
+		{
+			$("#error").dialog("open");
+			setTimeout(function(){
+				$("#error").dialog("close");
+				$("#login").dialog("open");
+			},1000);
+		
+			
+		}
+		
+		
+	});
+	
+	
+	
 });//function 结束
 	
 	//加载更多问题
@@ -63,7 +96,8 @@ $(function(){
 	  	  currenpage=currenpage+1;
 	  	  $(".left_main .currenpage").val(currenpage);
 	  	  var loadtype=$(".left_main .loadtype").val();
-	  	   showQuestion(loadtype,"",currenpage);
+	  	  var username=$.cookie('user');
+	  	   showQuestion(loadtype,"",currenpage,username);
 	  	   
 	  	   checkloadmorequestion(loadtype);
 	     });
@@ -72,11 +106,13 @@ $(function(){
 	
 	
 	function checkloadmorequestion(type){
+		var username=$.cookie('user');
 		$.ajax({
 			url:"getQuestionTotalPage.do",
 			type:"POST",
 			data:{
 				type:type,
+				username:username,
 			},
 			success:function(responseText,statusText){
 				$(".left_main .totalpage").val(responseText);
@@ -111,7 +147,7 @@ $(function(){
 	}
 	
 	
-   function showQuestion(type,keyword,page){
+   function showQuestion(type,keyword,page,username){
 	   $.ajax({
 		  url:"showQuestion.do",
 		  type:"POST",
@@ -119,6 +155,7 @@ $(function(){
 			  keyword:keyword,
 			  page:page,
 			  type:type,
+			  username:username,
 		        },
 		  success:function(response,status,xhr){
 				 var html="";
@@ -151,7 +188,8 @@ $(function(){
 					        "<div class='answer_number'>回答 "+value.answernum+"</div>"+
 							"<div class='question_summary'><h3><a href=showDetailQuestion.do?questionid="+value.questionid +">"+value.title+"</a></h3>" +
 							"<div class='questionlistcss'>"+summary[index]+"</div></div>" +
-							"<div class='queston_share_bar'><em>浏览数 "+value.browsenum+"</em><span>|</span><em>收藏数"+value.collectnum+"</em></div>"+
+							"<div class='queston_share_bar'><div>浏览  <em> "+value.browsenum+"</em></div>" +
+							"<span>|</span><div>收藏  <em>"+value.collectnum+"</em></div></div>"+
 							"<hr noshade='noshade' size='1' />";
 				 });
 				 $("#loadmorequestion").before(html);

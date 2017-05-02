@@ -30,13 +30,13 @@ $(function(){
 		buttons:{
           "提交":function(){
         	  
-        	  var content=$(".uEditorIframe").contents().find("#iframeBody").html();
+        	  var content=$("#question .uEditorIframe").contents().find("#iframeBody").html();
 				$(this).ajaxSubmit({
 					url:"addQuestion.do",
 					type:"POST",
 					data:{
 						user:$.cookie("user"),
-						questionContent:$(".uEditorIframe").contents().find("#iframeBody").html(),
+						questionContent:$("#question .uEditorIframe").contents().find("#iframeBody").html(),
 					},
 					
 					beforeSubmit:function(formData,jqForm,options){
@@ -51,7 +51,7 @@ $(function(){
 							$("#loading").css("background","url(img/success.gif) no-repeat 20px center").html("发布成功.....");
 							
 							
-							alert(content);
+							
 							var summary=content.substring(0,200);
 							if(summary.substring(199,200)=='<')
 							 {
@@ -68,8 +68,8 @@ $(function(){
 									summary=summary+'...'; 
 							 }
 							
-							 var date=new Date();
-							 var title=$("#question #title").val();
+							var date=new Date();
+							var title=$("#question #title").val();
 							var html="<div class='question_username'> <a href='#'>"+$.cookie("user")+"</a>发表于"+
 							        date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate()+"</div>"+
 						        "<div class='question_point'>积分<span class='badge '>"+$("#question_point").val()+"</span></div>"+

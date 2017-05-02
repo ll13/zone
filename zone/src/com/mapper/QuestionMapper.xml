@@ -76,12 +76,22 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
    
    </select>
    
-   <select id="getIdbyTitle" resultType="int">
+   <select id="getQuestionTotalRowMyquestion" resultType="int">
+       select count(*) from question where username=#{username};
+   
+   </select>
+   
+   <select id="getIdbyTitle" parameterType="Question" resultType="int">
        select questionid from question where title=#{title};
    
    </select>
    
-   <update id="updateBrowsenum" parameterType="Question"  >
+   <select id="getQuestionbyUsername" parameterType="Question" resultMap="questionmap">
+       select * from question where username=#{username} limit #{start},#{pageSize};
+   
+   </select>
+   
+   <update id="updateBrowsenum" parameterType="Question" >
        update question SET browsenum=browsenum+1 where questionid=#{questionid}
    </update>
    
@@ -89,12 +99,21 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
        update question SET answernum=answernum+1 where questionid=#{questionid}
    </update>
    
-   <update id="addCollectnum" parameterType="Question"  >
+   <update id="addCollectnum" parameterType="Question" >
        update question SET collectnum=collectnum+1 where questionid=#{questionid}
    </update>
    
-   <update id="delectCollectnum" parameterType="Question"  >
+   <update id="delectCollectnum" parameterType="Question" >
        update question SET collectnum=collectnum-1 where questionid=#{questionid}
    </update>
+   
+   <update id="updateQuestionbyquestionid" parameterType="Question"  >
+       UPDATE  question SET title=#{title} , content=#{content},point=#{point} WHERE questionid=#{questionid}
+   </update>
+   
+   <delete id="delectQuestionbyquestionid" parameterType="Question" >
+       DELETE FROM question WHERE questionid=#{questionid}
+   
+   </delete>
    
 </mapper>

@@ -29,5 +29,9 @@ private Cache(){}
 	   return map.get(key);
    }
    
+   public void clear(){
+	   map.clear();
+   }
+   
    
 }

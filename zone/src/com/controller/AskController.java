@@ -37,6 +37,8 @@ public class AskController {
 		question.setContent(questionContent);
 		question.setPoint(question_point);
 		
+		Cache cache=Cache.getInstance();
+	    cache.clear();
 		
 		questionMapper.insertQuestion(question);
 		String questionid=questionMapper.getIdbyTitle(question)+"";
@@ -44,7 +46,7 @@ public class AskController {
 	}
 	
 	@RequestMapping("/getQuestionTotalPage.do")
-	public @ResponseBody String getQuestionTotalPage(String type){
+	public @ResponseBody String getQuestionTotalPage(String type,String username){
 		Cache cache=Cache.getInstance();
 		int totalRow=0;
 		if(cache.getElementbyKey("questionPage"+type)==null){
@@ -62,6 +64,11 @@ public class AskController {
 		 }
 		 if(type.equals("answer")){
 			 totalRow=questionMapper.getQuestionTotalRowAnswer();
+		 }
+		 if(type.equals("myquestion")){
+			 Question q=new Question();
+			 q.setUsername(username);
+			 totalRow=questionMapper.getQuestionTotalRowMyquestion(q);
 		 }
 		 questionPage.setTotalRow(totalRow);
 	     cache.putElementbyKey("questionPage"+type, questionPage);
@@ -84,7 +91,7 @@ public class AskController {
 	
 	
 	@RequestMapping("/showQuestion.do")
-	public @ResponseBody List<Question> showQuestion(String type,String keyword,int page){
+	public @ResponseBody List<Question> showQuestion(String type,String keyword,int page,String username){
 		Question question=new Question();
 		question.setPageSize(questionPageSize);		
 		question.setCurrentPage(page);
@@ -101,6 +108,10 @@ public class AskController {
 		}
         if(type.equals("answer")){
         	questionlist=questionMapper.getQuestionHaveAnswer(question);
+		}
+        if(type.equals("myquestion")){
+        	question.setUsername(username);
+        	questionlist=questionMapper.getQuestionbyUsername(question);
 		}
         
 		
@@ -158,6 +169,27 @@ public class AskController {
 		Question question=new Question();
 		question.setQuestionid(Integer.parseInt(questionid));
 		questionMapper.delectCollectnum(question);
+		return "1";
+	}
+	
+	@RequestMapping("/updateQuestion.do")
+	public @ResponseBody String updateQuestion(String questionid,String title,String content,String point){
+		Question question=new Question();
+		question.setQuestionid(Integer.parseInt(questionid));
+		question.setTitle(title);
+		question.setContent(content);
+		question.setPoint(point);
+		questionMapper.updateQuestionbyquestionid(question);
+		return "1";
+	}
+	
+	@RequestMapping("/delectQuestion.do")
+	public @ResponseBody String delectQuestion(String questionid){
+		Question question=new Question();
+		question.setQuestionid(Integer.parseInt(questionid));
+		questionMapper.delectQuestionbyquestionid(question);
+	    Cache cache=Cache.getInstance();
+	    cache.clear();
 		return "1";
 	}
 	

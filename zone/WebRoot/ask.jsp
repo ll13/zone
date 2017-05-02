@@ -68,6 +68,8 @@
 					<li><a  id="question_button"  "><span
 							class="glyphicon glyphicon-plus"></span>提问</a>
 					</li>
+					<li id="myQuestion"><a id="showMyQueston">我的提问</a>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -77,11 +79,11 @@
 		<div class="right_main">
 		   <div id="hotquestion">
 		     <h4>热门问答</h4>
-		     <li></li><hr noshade='noshade' size='1'/>
-		     <li></li><hr noshade='noshade' size='1'/>
-		     <li></li><hr noshade='noshade' size='1'/>
-		     <li></li><hr noshade='noshade' size='1'/>
-		     <li></li><hr noshade='noshade' size='1'/>
+		     <li></li>
+		     <li></li>
+		     <li></li>
+		     <li></li>
+		     <li></li>
 		   </div>
 		</div>
 	</div>
@@ -96,7 +98,7 @@
 			<textarea class="uEditorCustom" name="content"></textarea>
 		</p>
        
-         <p>  <label>积分</label> <input type="text" class="text"  name="question_point" id="question_point"/></p>
+         <p>  <label>积分</label> <input type="text" class="text"  name="question_point" id="question_point" value="0"/></p>
         
 	</form>
 	

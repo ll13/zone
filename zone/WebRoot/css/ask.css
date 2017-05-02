@@ -14,7 +14,7 @@
 
 
 
-#question_button,#showQuestionWithPoint,#showQuestionWithNoAnswer,#showQuestionWithAnswer{
+#question_button,#showQuestionWithPoint,#showQuestionWithNoAnswer,#showQuestionWithAnswer,#showMyQueston{
 	cursor: pointer;
 }
 
@@ -109,6 +109,12 @@
 	float:right;
 }
 
+.queston_share_bar div{
+	display:inline-block;
+	margin:0 5px;
+}
+
+
 hr {
 	float: left;
 	width: 100%;
@@ -127,4 +133,8 @@ hr {
 #hotquestion li a:hover{
 	
 	color: red;
+}
+
+.answer_number_detail{
+	float:left;
 }

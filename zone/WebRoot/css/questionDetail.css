@@ -51,3 +51,15 @@
 .left_main a{
 	cursor: pointer;
 }
+
+.left_main .myQuestion_div{
+	float:right;
+	display:inline-block;
+}
+
+.left_main .myQuestion_div div{
+    padding:5px;
+	display:inline-block;
+}
+
+
