@@ -21,9 +21,9 @@ public class BlogController {
 	
 	
 	@RequestMapping("/showBlog.do")
-	public @ResponseBody List<Blog> showQuestion(String type,int page){
-		//Question question=new Question();
-		List<Blog> Bloglist=blogMapper.getBlogByAuthor();
+	public @ResponseBody List<Blog> showQuestion(String type,String keyword,int page){
+		Blog blog =new Blog();
+		List<Blog> Bloglist=blogMapper.getBlogByAuthor(blog);
 		
 		
 		return Bloglist;
