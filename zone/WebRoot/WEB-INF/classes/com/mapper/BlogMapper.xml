@@ -15,7 +15,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
       <result property="clicknum" column="clicknum"/>
       <result property="collectnum" column="collectnum"/>
       <result property="commentnum" column="commentnum"/>
-      <result property="Commentpermission" column="Commentpermission"/>
+      <result property="commentpermission" column="commentpermission"/>
    </resultMap>
   
   

@@ -3,9 +3,9 @@ package com.po;
 public class Blog {
 	private int id;
 	private String title;
-	private String calss_id;
+	private int class_id;
 	private String content;
-	private int author_id;
+	private int author;
 	private String pubtime;
 	private int clicknum;
 	private int collectnum;
@@ -23,11 +23,11 @@ public class Blog {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public String getCalss_id() {
-		return calss_id;
+	public int getClass_id() {
+		return class_id;
 	}
-	public void setCalss_id(String calss_id) {
-		this.calss_id = calss_id;
+	public void setClass_id(int class_id) {
+		this.class_id = class_id;
 	}
 	public String getContent() {
 		return content;
@@ -35,11 +35,12 @@ public class Blog {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public int getAuthor_id() {
-		return author_id;
+
+	public int getAuthor() {
+		return author;
 	}
-	public void setAuthor_id(int author_id) {
-		this.author_id = author_id;
+	public void setAuthor(int author) {
+		this.author = author;
 	}
 	public String getPubtime() {
 		return pubtime;

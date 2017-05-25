@@ -7,5 +7,5 @@ import com.po.Blog;
 
 
 public interface BlogMapper {
-	public List<Blog> getBlogByAuthor(); 
+	public List<Blog> getBlogByAuthor(Blog blog); 
 }
