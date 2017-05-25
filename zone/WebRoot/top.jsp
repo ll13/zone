@@ -5,10 +5,9 @@
 	   		
 	          <div class="header_button">
                  <button id="blog_btn" class="btn">博客</button>
-                 <button id="bbs_btn" class="btn">论坛</button>
+                 <button id="bbs_btn" class="btn"><a href=bbs.jsp>论坛</a></button>
                  <button id="question_btn" class="btn"><a href=ask.jsp>问答</a></button>
                  <button id="download_btn" class="btn">下载</button>
-                 <button id="score_btn" class="btn">积分</button>
                  <button id="information_btn" class="btn">个人主页</button>
              </div>
 		   	

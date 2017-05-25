@@ -65,11 +65,19 @@
 					</li>
 					<li id="Question_Answer"><a id="showQuestionWithAnswer">已解决</a>
 					</li>
-					<li><a  id="question_button"  "><span
+					<li><a  id="question_button" ><span
 							class="glyphicon glyphicon-plus"></span>提问</a>
 					</li>
 					<li id="myQuestion"><a id="showMyQueston">我的提问</a>
 					</li>
+					</li>
+					<li id="QuestionCollect"><a id="showCollectQueston">我的收藏</a>
+					</li>
+					<div class="btn-group search-group">
+	                  <input type="text" name="search" id="search" class="search btn btn-default">
+	                  <button type="button" class="search_question_btn btn btn-default">查找</button>	                  
+                    </div>
+					
 				</ul>
 			</div>
 		</div>
@@ -86,6 +94,18 @@
 		     <li></li>
 		   </div>
 		</div>
+		
+		<div class="right_main">
+		   <div id="newquestion">
+		     <h4>最新问答</h4>
+		     <li></li>
+		     <li></li>
+		     <li></li>
+		     <li></li>
+		     <li></li>
+		   </div>
+		</div>
+		
 	</div>
 
 	

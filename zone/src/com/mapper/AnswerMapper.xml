@@ -11,6 +11,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
       <result property="username" column="username"/>
       <result property="content" column="content"/>
       <result property="date" column="date"/>
+      <result property="haveright" column="haveright"/>
    </resultMap>
    
    
@@ -18,15 +19,19 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
    
  
    
-    <insert id="insertAnswer" parameterType="answer" >
+    <insert id="insertAnswer" parameterType="Answer" >
        insert into answer (questionid,username,content,date) values(#{questionid},#{username},#{content},now())
    
    </insert>
    
-   <select id="getAnswerbyqid" parameterType="answer" resultMap="answermap">
+   <select id="getAnswerbyqid" parameterType="Answer" resultMap="answermap">
    
        select * from answer where questionid=#{questionid}
    </select>
   
+    <update id="updateAnswerRight" parameterType="Answer" >
+       update answer SET isright=isright+1 where answerid=#{answerid}
+   </update>
+   
    
 </mapper>

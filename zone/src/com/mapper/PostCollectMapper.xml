@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.PostCollectMapper">
+   
+   <resultMap type="PostCollect" id="postcollectmap">
+      <result property="id" column="id"/>
+      <result property="username" column="username"/>
+      <result property="postid" column="postid"/>     
+   </resultMap>
+   
+   <insert id="insertPostCollect" parameterType="PostCollect" >
+       insert into postcollect (username,postid) values(#{username},#{postid})
+   
+   </insert>
+   
+    <delete id="delectPostCollect" parameterType="PostCollect" >
+       DELETE FROM postcollect WHERE username=#{username} and postid=#{postid}
+   
+   </delete>
+   
+   
+   
+</mapper>

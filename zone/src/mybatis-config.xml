@@ -9,6 +9,11 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
        <typeAlias type="com.po.Answer" alias="Answer"/>
        <typeAlias type="com.po.Page" alias="Page"/>
        <typeAlias type="com.po.Blog" alias="Blog"/>
+       <typeAlias type="com.po.Post" alias="Post"/>
+       <typeAlias type="com.po.Reply" alias="Reply"/>
+       <typeAlias type="com.po.PostCollect" alias="PostCollect"/>
+       <typeAlias type="com.po.QuestionCollect" alias="QuestionCollect"/>
+       <typeAlias type="com.po.Catalog" alias="Catalog"/>
        <typeAlias type="com.po.Blog_Comment" alias="Blog_Comment"/>
      </typeAliases>
 

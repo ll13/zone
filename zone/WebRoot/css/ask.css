@@ -18,6 +18,10 @@
 	cursor: pointer;
 }
 
+.search-group{
+	
+	margin: 8px 0;
+}
 
 #question{
 	padding: 15px 0 0 15px;
@@ -120,19 +124,23 @@ hr {
 	width: 100%;
 }
 
-#hotquestion li{
+#hotquestion li,#newquestion li{
 	border-bottom: 1px solid #f0f0f0;
     line-height: 35px;
 }
 
-#hotquestion li a{
+#hotquestion li a,#newquestion li a{
 	text-decoration: none;
 	color: #666;
 }
 
-#hotquestion li a:hover{
+#hotquestion li a:hover,#newquestion li a:hover{
 	
 	color: red;
+}
+
+.right_main{
+	margin:10px 0;
 }
 
 .answer_number_detail{

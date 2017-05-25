@@ -7,6 +7,8 @@ public class User {
 	private String email;
 	private String sex;
 	private String birthday;
+	private int point;
+	
 	public int getId() {
 		return id;
 	}
@@ -42,6 +44,14 @@ public class User {
 	}
 	public void setBirthday(String birthday) {
 		this.birthday = birthday;
+	}
+	
+
+	public int getPoint() {
+		return point;
+	}
+	public void setPoint(int point) {
+		this.point = point;
 	}
 	@Override
 	public String toString() {

@@ -215,6 +215,7 @@ $(function(){
     
     showMyQuestion_div();
 	showHotQuestion();
+	showNewQuestion();
 	$(".uEditorCustom").uEditor();
 	$(".updateQuestionEdit").uEditor();
 });//function 结束

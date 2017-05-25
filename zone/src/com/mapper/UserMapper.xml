@@ -12,6 +12,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
       <result property="email" column="email"/>
       <result property="sex" column="sex"/>
       <result property="birthday" column="birthday"/>
+      <result property="point" column="point"/>
    </resultMap>
    
    

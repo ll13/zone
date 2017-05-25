@@ -2,26 +2,24 @@ package com.po;
 
 import java.sql.Date;
 
-public class Answer {
-	private  int answerid;
-	private  int questionid;
+public class Reply {
+	private  int id;
+	private  int  pid;
 	private  String username;
 	private  String content;
 	private  Date date;
-	private  int isright;
-	
-	
-	public int getAnswerid() {
-		return answerid;
+	private  int  floor;
+	public int getId() {
+		return id;
 	}
-	public void setAnswerid(int answerid) {
-		this.answerid = answerid;
+	public void setId(int id) {
+		this.id = id;
 	}
-	public int getQuestionid() {
-		return questionid;
+	public int getPid() {
+		return pid;
 	}
-	public void setQuestionid(int questionid) {
-		this.questionid = questionid;
+	public void setPid(int pid) {
+		this.pid = pid;
 	}
 	public String getUsername() {
 		return username;
@@ -29,7 +27,6 @@ public class Answer {
 	public void setUsername(String username) {
 		this.username = username;
 	}
-
 	public String getContent() {
 		return content;
 	}
@@ -42,16 +39,12 @@ public class Answer {
 	public void setDate(Date date) {
 		this.date = date;
 	}
-	public int getIsright() {
-		return isright;
+	public int getFloor() {
+		return floor;
 	}
-	public void setIsright(int isright) {
-		this.isright = isright;
+	public void setFloor(int floor) {
+		this.floor = floor;
 	}
 	
-    
-    
-    
-    
-    
+	
 }

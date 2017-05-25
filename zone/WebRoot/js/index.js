@@ -13,7 +13,6 @@ $(function(){
 	
 	
 	$("#download_btn").button();
-	$("#score_btn").button();
 	$("#information_btn").button();
 	
 	$("#register").dialog({

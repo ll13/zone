@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.PostMapper">
+   
+   <resultMap type="Post" id="postmap">
+      <result property="id" column="id"/>
+      <result property="username" column="username"/>
+      <result property="title" column="title"/>
+      <result property="content" column="content"/>
+      <result property="pid" column="pid"/>
+      <result property="date" column="date"/>
+      <result property="replynum" column="replynum"/>
+      
+   </resultMap>
+   
+    <insert id="insertPost" parameterType="Post" >
+       insert into post (username,title,content,pid,date) values(#{username},#{title},#{content},#{pid},now())
+   
+   </insert>
+   
+   <select id="getPostbyid"  parameterType="Post" resultMap="postmap">
+   
+       select * from post where id=#{id}
+   </select>
+   
+    <select id="getPostbyPage" parameterType="Post"   resultMap="postmap">
+   
+       select * from post limit #{start},#{pageSize}
+   </select>
+   
+   <select id="getPostbyPageAndPid" parameterType="Post"   resultMap="postmap">
+   
+       select * from post where pid=#{pid} limit #{start},#{pageSize}
+   </select>
+   
+   <select id="getPostbyPageUsername" parameterType="Post"   resultMap="postmap">
+   
+       select * from post where username=#{username} limit #{start},#{pageSize}
+   </select>
+   
+   
+</mapper>

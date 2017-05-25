@@ -12,6 +12,7 @@ public class Question extends Page{
 	private int answernum;
 	private int browsenum;
 	private int collectnum;
+	private int isright;
 	
 	
 	public int getQuestionid() {
@@ -67,6 +68,14 @@ public class Question extends Page{
 	}
 	public void setCollectnum(int collectnum) {
 		this.collectnum = collectnum;
+	}
+	
+	
+	public int getIsright() {
+		return isright;
+	}
+	public void setIsright(int isright) {
+		this.isright = isright;
 	}
 	@Override
 	public String toString() {
