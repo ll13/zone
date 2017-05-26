@@ -126,9 +126,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		     <li></li>
 		     <li></li>
 		   </div>
-		</div>
-		
-		<div class="right_main">
+		   
 		   <div id="newquestion">
 		     <h4>最新问答</h4>
 		     <li></li>
@@ -138,7 +136,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		     <li></li>
 		   </div>
 		</div>
-	</div>
+		</div>
+		
+		
     <form id="update_question" title="编辑提问" >
 		<p>
 			<label>问题名称:</label> <input type="text" name="title"

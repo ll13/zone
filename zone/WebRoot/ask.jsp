@@ -74,8 +74,8 @@
 					<li id="QuestionCollect"><a id="showCollectQueston">我的收藏</a>
 					</li>
 					<div class="btn-group search-group">
-	                  <input type="text" name="search" id="search" class="search btn btn-default">
-	                  <button type="button" class="search_question_btn btn btn-default">查找</button>	                  
+	                  <input type="text" name="search" id="search_question_content" class="search btn btn-default">
+	                  <button type="button" class="search_question_btn btn btn-default" id="search_question">查找</button>	                  
                     </div>
 					
 				</ul>
@@ -93,9 +93,7 @@
 		     <li></li>
 		     <li></li>
 		   </div>
-		</div>
-		
-		<div class="right_main">
+		   
 		   <div id="newquestion">
 		     <h4>最新问答</h4>
 		     <li></li>
@@ -105,6 +103,8 @@
 		     <li></li>
 		   </div>
 		</div>
+		
+		
 		
 	</div>
 

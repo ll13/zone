@@ -4,11 +4,27 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.mapper.QuestionCollectMapper">
    
+   <resultMap type="QuestionCollect" id="questioncollectmap">
+      <result property="id" column="id"/>
+      <result property="username" column="username"/>
+      <result property="questionid" column="questionid"/>
+      
+   </resultMap>
    
+   <insert id="insertQuestionCollect" parameterType="QuestionCollect" >
+       insert into questioncollect (username,questionid) values(#{username},#{questionid})
    
+   </insert>
    
+    <delete id="delectQuestionCollect" parameterType="QuestionCollect" >
+       DELETE FROM questioncollect WHERE username=#{username} and questionid=#{questionid}
    
-  
+   </delete>
+   
+   <select id="checkCollect" parameterType="QuestionCollect" resultMap="questioncollectmap">
+   
+      select * from questioncollect where username=#{username} and questionid=#{questionid}
+   </select>
    
    
    

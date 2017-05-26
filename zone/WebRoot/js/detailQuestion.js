@@ -1,6 +1,6 @@
 $(function(){
 	
-	 
+	 //增加回答
 	$("#answerQuestionbtn").click(function(){
 		var questionid=$(".question_id").val();
 		$(".username").val($.cookie('user'));
@@ -57,21 +57,53 @@ $(function(){
 		 }
 			
 		
-	});//click函数结束
+	});//增加回答函数结束
 	
+	
+	
+	//初始化收藏
+	function initCollect(){
+		if($.cookie("user")){
+			var username=$.cookie('user');
+			var questionid=$(".question_id").val();
+			$.ajax({
+				url:"checkCollect.do",
+				type:"POST",
+				data:{
+					questionid:questionid,
+					username:username,
+				},
+				success:function(responseText,statusText){
+				  if(responseText==1){					
+                    $(".left_main .collectQuestion").attr("select","selected");
+					var num=Number($(".left_main .collectQuestion em").html());
+					var value="已收藏<em>"+num+"</em>";
+					$(".left_main .collectQuestion").html(value);
+				  }
+				}
+				
+			});	
+		}
+		
+	}
+	
+	//收藏
 	$(".left_main .collectQuestion").click(function(){
+	  if($.cookie("user")){
 		var flag=this.getAttribute("select");
 		if(flag=="unselect"){
 			this.setAttribute("select","selected");
 			var num=Number($(".left_main .collectQuestion em").html())+1;
 			var value="已收藏<em>"+num+"</em>";
 			var questionid=$(".question_id").val();
+			var username=$.cookie('user');
 			$(this).html(value);
 			$.ajax({
 				url:"addCollectnum.do",
 				type:"POST",
 				data:{
 					questionid:questionid,
+					username:username,
 				},
 			});	
 		}else{
@@ -79,20 +111,31 @@ $(function(){
 			var num=Number($(".left_main .collectQuestion em").html())-1;
 			var value="收藏<em>"+num+"</em>";
 			var questionid=$(".question_id").val();
+			var username=$.cookie('user');
 			$(this).html(value);
 			$.ajax({
 				url:"delectCollectnum.do",
 				type:"POST",
 				data:{
 					questionid:questionid,
+					username:username,
 				},
 			});	
+			
+		}
+	  }else{
+			$("#error").dialog("open");
+			setTimeout(function(){
+				$("#error").dialog("close");
+				$("#login").dialog("open");
+			},1000);
+		
 			
 		}
 	});
 	
 	
-	
+	//修改我的提问
 	$(".left_main .editMyQuestion").click(function(){
 		if($.cookie("user")){
 			$("#update_question").dialog("open");
@@ -111,11 +154,13 @@ $(function(){
 		}
 	});
 	
+	//往文本框中输入内容
 	function insertQuestionContent(){
 		var content=$("#update_question .uEditor input").val();
 			$("#update_question .uEditorIframe").contents().find("#iframeBody").html(content);
 	}
 	
+	//我的提问对话框
 	$("#update_question").dialog({
 		autoOpen:false,
 		modal:true,
@@ -166,7 +211,7 @@ $(function(){
 		         },
 	 });         
 	
-	
+	//删除问题
     $(".left_main .delectMyQuestion").click(function(){
     	 if(confirm("是否删除问题")){
     	    var answernum=$(".answer_number_detail em ").html();
@@ -194,25 +239,22 @@ $(function(){
     	  }
 	});
 	
+    //修改和删除只在我的问题中的显示
     function showMyQuestion_div(){
     	var cookiename=$.cookie("user");
-    	var username=$(".question_username a").html().replace(/(^\s*)|(\s*$)/g,'');
-    	
+    	var username=$(".question_username a").html().replace(/(^\s*)|(\s*$)/g,'');    	
     	if(cookiename==username){
     		
     		 $(".myQuestion_div").show();
     		 
     	}
     }
-    
-    
-    
     $(".myQuestion_div").hide();
     
     
     
     
-    
+    initCollect();
     showMyQuestion_div();
 	showHotQuestion();
 	showNewQuestion();

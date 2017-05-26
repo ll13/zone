@@ -45,6 +45,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
        select * from question order by browsenum DESC limit 0,5
    </select>
    
+   <select id="getNewQuestion"  resultMap="questionmap">
+   
+       select * from question order by date DESC limit 0,5
+   </select>
    
     <insert id="insertQuestion" parameterType="Question" >
        insert into question (username,title,content,point,date) values(#{username},#{title},#{content},#{point},now())
@@ -81,6 +85,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
    
    </select>
    
+   <select id="getMyCollectQuestionTotalRow" resultType="int">
+       select count(*) from questioncollect where username=#{username};
+   
+   </select>
+   
+   <select id="getQuestionKeywordTotalRow" resultType="int">
+       select count(*) from question where title like #{title};
+   
+   </select>
+   
    <select id="getIdbyTitle" parameterType="Question" resultType="int">
        select questionid from question where title=#{title};
    
@@ -88,6 +102,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
    
    <select id="getQuestionbyUsername" parameterType="Question" resultMap="questionmap">
        select * from question where username=#{username} limit #{start},#{pageSize};
+   
+   </select>
+   
+   <select id="getMyCollectQuestion" parameterType="Question" resultMap="questionmap">
+       SELECT * FROM question WHERE questionid=(SELECT questionid FROM questioncollect WHERE username=#{username})
+   
+   </select>
+   
+    <select id="getQuestionbyKeyword" parameterType="Question" resultMap="questionmap">
+       SELECT * FROM question WHERE title like #{title}
    
    </select>
    

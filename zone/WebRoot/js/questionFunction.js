@@ -68,14 +68,54 @@ $(function(){
 			setTimeout(function(){
 				$("#error").dialog("close");
 				$("#login").dialog("open");
-			},1000);
-		
-			
+			},1000);			
 		}
 		
 		
 	});
 	
+	$("#showCollectQueston").click(function(){
+		if($.cookie("user")){
+			$("#main nav li").removeClass("active");
+			$("#QuestionCollect").addClass("active");
+			$(".left_main").html("");
+			
+			loadmorequestion();
+			
+			var type="collect";
+			var page="1";
+			var username=$.cookie("user");
+			$(".left_main .loadtype").val(type);
+			$(".left_main .currenpage").val(page);
+			showQuestion(type,"",page,username);				
+			checkloadmorequestion(type);
+			
+		}
+		else
+		{
+			$("#error").dialog("open");
+			setTimeout(function(){
+				$("#error").dialog("close");
+				$("#login").dialog("open");
+			},1000);			
+		}		
+	});
+	
+	$("#search_question").click(function(){
+		$("#main nav li").removeClass("active");
+		$(".left_main").html("");
+		
+		loadmorequestion();
+		var type="keyword"
+		var page="1"
+		var username=$.cookie("user");
+		$(".left_main .loadtype").val(type);
+		$(".left_main .currenpage").val(page);
+		var keyword=$("#search_question_content").val();
+		showQuestion(type,keyword,page,username);				
+		checkloadmorequestion(type);
+		
+	});
 	
 	
 });//function 结束
@@ -107,12 +147,14 @@ $(function(){
 	
 	function checkloadmorequestion(type){
 		var username=$.cookie('user');
+		var keyword=$("#search_question_content").val();
 		$.ajax({
 			url:"getQuestionTotalPage.do",
 			type:"POST",
 			data:{
 				type:type,
 				username:username,
+				keyword:keyword,
 			},
 			success:function(responseText,statusText){
 				$(".left_main .totalpage").val(responseText);
@@ -148,7 +190,7 @@ $(function(){
 	
 	function showNewQuestion(){
 		$.ajax({
-			url:"showHotQuestion.do",
+			url:"showNewQuestion.do",
 			type:"POST",
 			success:function(response,status,xhr){
 				var list=$("#newquestion li");
