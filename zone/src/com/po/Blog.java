@@ -1,11 +1,11 @@
 package com.po;
 
-public class Blog {
+public class Blog extends Page{
 	private int id;
 	private String title;
 	private int class_id;
 	private String content;
-	private int author;
+	private String author;
 	private String pubtime;
 	private int clicknum;
 	private int collectnum;
@@ -36,10 +36,10 @@ public class Blog {
 		this.content = content;
 	}
 
-	public int getAuthor() {
+	public String getAuthor() {
 		return author;
 	}
-	public void setAuthor(int author) {
+	public void setAuthor(String author) {
 		this.author = author;
 	}
 	public String getPubtime() {

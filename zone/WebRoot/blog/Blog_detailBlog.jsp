@@ -11,7 +11,7 @@
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
-<title>personalblog</title>
+<title>${blog.title}</title>
 <head>
 <base href="<%=basePath%>">
 
@@ -71,6 +71,10 @@
 	</div>
 </div>
 	<div class="main_right">
+	 	 <h1>${blog.title}</h1>
+		 <div class="blog_author"> <a href='#'> ${blog.author}</a>发表于    ${blog.pubtime}</div>
+		 <div class="blog_content"> ${blog.content}</div>
+		 <div class="blog_data">阅读 ${blog.clicknum}</div>
 		
 	</div>
 </div>

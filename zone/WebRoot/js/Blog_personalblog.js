@@ -9,8 +9,7 @@ $(function(){
 
 
 function showblog(type,keyword,page){
-	//alert(123);
-	$(".main_right").append("Hello,"+$.cookie("user"));
+	//$(".main_right").append("Hello,"+$.cookie("user"));
 	 $.ajax({
 		  url:"showBlog.do",
 		  type:"POST",
@@ -22,14 +21,19 @@ function showblog(type,keyword,page){
      success:function(response,status,xhr){
     	 var html="";
 		 var arr=[];       //内容
-		 //var summary=[];   //摘要
+		 var summary=[];   //摘要
 		 $.each(response,function(index,value){
-			 arr[index]=value.content;
-			 html+="<h1><a href='#'>"+value.title+"</a></h1>";
-			 html+="<h2>"+value.author+"&nbsp&nbsp&nbsp"+value.pubtime+"</h2>"
-			 html+="<p>"+value.content+"</p>"
-			
-			 //html+=value.content;
+			 if(value.content.length>200){
+				 summary[index]=value.content.substring(0,200)+"...";
+			 	}else{
+				 summary[index]=value.content;
+			 	}
+			 
+			 
+			 
+			 html+="<h1><a href=showDetailBlog?id="+value.id +">"+value.title+"</a></h1>";
+			 html+="<h2>"+value.pubtime+"</h2>"
+			 html+="<p>"+summary[index]+"</p>"
 			
 			});
 		 	$(".main_right").append(html);
