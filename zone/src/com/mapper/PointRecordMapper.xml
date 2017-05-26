@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapper namespace="com.mapper.PointRecordMapper">
+	<resultMap type="PointRecord" id="pointrecordmap">
+		<result property="operationid" column="operationid" />
+		<result property="userid" column="userid" />
+		<result property="change" column="change" />
+		<result property="datetime" column="datetime" />
+		<result property="reason" column="reason" />
+	</resultMap>
+	<insert id="addPointRecord" parameterType="PointRecord"> 
+		insert into pointrecord(userid,change,datetime,reason) values(#{userid},#{change},now(),#{reason})
+	</insert>
+	
+	<select id="getPointRecordList" parameterType="PointRecord">
+		select * from pointrecord where userid=#{userid}
+	</select>
+</mapper>

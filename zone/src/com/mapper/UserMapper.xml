@@ -34,7 +34,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
    
    </insert>
    
+   <select id="getUserById" parameterType="User" resultMap="usermap">
+		select * from user where userid=#{id}
+   </select>
    
+   <update id="updatePoint" parameterType="User">
+   		update user SET point=#{point} where userid=#{userid}  
+   </update>
   
    
 </mapper>
