@@ -14,6 +14,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
        <typeAlias type="com.po.PostCollect" alias="PostCollect"/>
        <typeAlias type="com.po.QuestionCollect" alias="QuestionCollect"/>
        <typeAlias type="com.po.Catalog" alias="Catalog"/>
+       <typeAlias type="com.po.PointRecord" alias="PointRecord"/>
        <typeAlias type="com.po.Blog_Comment" alias="Blog_Comment"/>
      </typeAliases>
 
