@@ -3,8 +3,24 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.mapper.ReplyMapper">
+   <resultMap type="Reply" id="replymap">
+      <result property="id" column="id"/>
+      <result property="pid" column="pid"/>
+      <result property="username" column="username"/>
+      <result property="content" column="content"/>
+      <result property="date" column="date"/>
+      <result property="floor" column="floor"/>
+   </resultMap>
    
+   <insert id="insertReply" parameterType="Reply" >
+       insert into reply (pid,username,content,date,floor) values(#{pid},#{username},#{content},now(),#{floor})
    
+   </insert>
+   
+   <select id="getReplybypid" parameterType="Reply" resultMap="replymap">
+   
+       select * from reply where pid=#{pid}
+   </select>
    
    
    

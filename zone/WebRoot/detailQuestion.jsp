@@ -111,9 +111,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		         <p><textarea class="uEditorCustom" ></textarea></p>
 		         <input type="button" value="我要回答" id="answerQuestionbtn" class=" btn btn-primary form_submit_answer_btn">
 		       </form>
-		    
-		    
-		    
 		    </div>
 		
 		</div>

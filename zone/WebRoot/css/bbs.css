@@ -8,6 +8,10 @@
 	
 }
 
+#main a:hover{
+	cursor: pointer;
+}
+
 #bbsnav{
 	background:#fff;
 }
@@ -76,5 +80,71 @@
 .addpostclass{
 	padding:2px 2px;
 	margin:0 10px 0 0;
+}
+
+.post_username{
+	display:inline-block;
+	width:50%;
+	float:left;
+	margin: 8px 0 12px 0;
+	padding:0 0 0 10px;
+}
+
+
+
+.num{
+	margin:5px 0 ;
+	float:right;
+	width:50%;
+	margin: 8px 0 12px 0;
+}
+
+.num div{
+	display:inline-block;
+	margin:0 5px;
+	float:right;
+}
+
+
+
+.post_content{
+	width: 100%;
+	padding:0 0 0 10px;
+	font-size: 16px;
+	font-family: 雅黑;
+}
+
+
+hr {
+	float: left;
+	width: 100%;
+}
+
+#loadmorepost{
+	width: 100%;
+}
+
+.right_main em{
+	font-size: 18px;
+}
+
+.right_main li {
+	font-size: 16px;
+	padding:5px 0 5px 0;
+}
+
+.replyEdit{
+	float: left;
+	padding: 0 0 0 12px;
+}
+
+.replyEdit .UEditor{
+	width:600px;
+	heigth:500px;
+}
+
+#replybtn{
+	float: right;
+	margin:10px 10px 15px 0
 }
 

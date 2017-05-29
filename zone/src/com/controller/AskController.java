@@ -112,13 +112,15 @@ public class AskController {
 		List<Question> questionlist=null;
 		
 		
-		if(type.equals("all")){
+		if(type.equals("all")&&page==1){
 			Cache cache=Cache.getInstance();
 			 questionlist=(List<Question>)cache.getElementbyKey("questionlist");
 			 if(questionlist==null){
 			 questionlist=questionMapper.getQuestionbyPage(question);
 			 cache.putElementbyKey("questionlist", questionlist);
 			 }			 
+		}if(type.equals("all")&&page>1){
+			questionlist=questionMapper.getQuestionbyPage(question);
 		}
 		
 		

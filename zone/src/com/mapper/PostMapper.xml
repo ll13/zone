@@ -12,7 +12,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
       <result property="pid" column="pid"/>
       <result property="date" column="date"/>
       <result property="replynum" column="replynum"/>
-      
+      <result property="collectnum" column="collectnum"/>
    </resultMap>
    
     <insert id="insertPost" parameterType="Post" >
@@ -40,5 +40,57 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
        select * from post where username=#{username} limit #{start},#{pageSize}
    </select>
    
+   <select id="getPostbyPageUserCollect" parameterType="Post"   resultMap="postmap">
+   
+       select * from post where id=(select postid from postcollect where username=#{username})
+   </select>
+   
+   
+   
+  <select id="getPostTotalRow" resultType="int">
+       select count(*) from post;
+   
+   </select>
+   
+   <select id="getPostTotalRowPid" resultType="int">
+       select count(*) from post where pid=#{pid};
+   
+   </select>
+   
+   <select id="getPostTotalRowMy" resultType="int">
+       select count(*) from post where username=#{username};
+   
+   </select>
+   
+   <select id="getPostTotalRowUserCollect" resultType="int">
+       select count(*) from postcollect where username=#{username};
+   
+   </select>
+   
+   <select id="getPostIdByTitleUsername" parameterType="Post"   resultType="int">
+   
+       select id from post where username=#{username} and title=#{title}
+   </select>
+   
+   <update id="updateReplynum" parameterType="Post" >
+       update post SET replynum=replynum+1 where id=#{id}
+   </update>
+   
+   <update id="upCollectnum" parameterType="Post" >
+       update post SET collectnum=collectnum+1 where id=#{id}
+   </update>
+   
+   <update id="downCollectnum" parameterType="Post"  >
+       UPDATE  post SET collectnum=collectnum-1 where id=#{id}
+   </update>
+   
+   <update id="updatePost" parameterType="Post"  >
+       UPDATE  post SET title=#{title} , content=#{content},pid=#{pid} WHERE id=#{id}
+   </update>
+   
+   <delete id="delectPostbyId" parameterType="Post" >
+       DELETE FROM post WHERE id=#{id}
+   
+   </delete>
    
 </mapper>

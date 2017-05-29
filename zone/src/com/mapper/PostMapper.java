@@ -4,11 +4,6 @@ import java.util.List;
 
 import com.po.Post;
 
-
-
-
-
-
 public interface PostMapper {
 	 
 	public  int insertPost(Post post);
@@ -21,10 +16,12 @@ public interface PostMapper {
 	public  int getPostTotalRowPid(Post post);
 	public  int getPostTotalRowMy(Post post);
 	public  int getPostTotalRowUserCollect(Post post);
-	public  int getPostIdByContentUsername();
+	
+	public  int getPostIdByTitleUsername(Post post);
 	public  int updateReplynum(Post post);
 	public  int upCollectnum(Post post);
-    public  int downCollectnum(Post post);    
+    public  int downCollectnum(Post post);
+    public  int updatePost(Post post); 
     public  int delectPostbyId(Post post);
-     
+    
 }

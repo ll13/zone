@@ -28,6 +28,8 @@ $(function(){
 					 
 					 setTimeout(function(){
 						var date=new Date();
+						var answernum=parseInt($(".answer_number_detail em").html())+1;
+						$(".answer_number_detail em").html(answernum);
 						var content=$(".answerEdit .uEditorIframe").contents().find("#iframeBody").html();
 						$(".answerEdit .uEditorIframe").contents().find("#iframeBody").html("");
 						$("#loading").dialog("close");

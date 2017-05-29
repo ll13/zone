@@ -35,7 +35,7 @@
 		<script type="text/javascript" src="uEditor/uEditor.js"></script>
 		<script type="text/javascript" src="js/index.js"></script>		
         <script type="text/javascript" src="js/bbsFunction.js"></script>       
-        <script type="text/javascript" src="js/bbs.js"></script>
+        <script type="text/javascript" src="js/bbsDetail.js"></script>
    
    
    </head>
@@ -69,7 +69,51 @@
 		</div>
 		</nav>
 		
-		<div class="left_main">		   		
+		<div class="left_main">
+		
+          <div>
+             <h3><p >&nbsp;&nbsp;&nbsp;${post.title}</a></h3>
+			   <div>
+			      <div class='post_username'> 楼主 :&nbsp; <a href='#'>${post.username}</a> &nbsp;&nbsp;  ${post.date}</div>
+			      <div class='myQuestion_div'>
+		             <div><a class='editMyPost'>编辑</a></div><span>|</span>
+		             <div><a class='delectMyPost' >删除</a></div>
+		          </div>			        
+			         <div class='num'>
+			            <div><a class="collect_number" select="unselect">收藏  <em> ${post.collectnum} </em></a></div>
+			       </div>
+			   </div>
+			   <div class='post_content'> ${post.content}</div>
+			   <div class='post_content'>&nbsp;</div>
+			   <div class='post_content'>&nbsp;</div>
+		 </div>							
+	     <hr noshade='noshade' size='1' />
+          <div class='reply_number_detail'>&nbsp;回复数量&nbsp;&nbsp;<em> ${post.replynum}</em> </div>
+		  <hr noshade='noshade' size='1' />
+		    <div class='replylist'>
+		       <c:forEach items="${replylist}" var="reply">
+		         <div class="replylist_div">
+		           <div class='reply_username'> <a href='#'> ${reply.username}</a>&nbsp;&nbsp;${reply.date}</div>
+		           <div>  楼层  <em>${reply.floor}</em></div>
+		           <div class='reply_content'>
+		             ${reply.content}
+		           </div>
+		           <hr noshade='noshade' class="postlistLine" size='1' />
+		         </div>
+		       </c:forEach>
+		    </div>
+		    
+		    
+		    <div class='replyEdit'>
+		       <form id="addreplyform" class="replyform" title="回复" >
+		         <input type='hidden' class="postid" name='postid' value="${postid}"/>
+		         <input type='hidden' name='username' class="username" value=""/>
+		         <input type='hidden' name='floor_num' class="floor_num" value=""/>
+		         <p><textarea class="uEditorCustom" ></textarea></p>
+		         <input type="button" value="回复" id="replybtn" class=" btn btn-primary">
+		       </form>
+		    </div>
+			   		
 		</div>
 		
 		

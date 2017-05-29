@@ -9,6 +9,7 @@ public class Post extends Page {
 	private String title;
 	private String content;
 	private int replynum;
+	private int collectnum;
 	private Date date;
 	public int getId() {
 		return id;
@@ -51,6 +52,20 @@ public class Post extends Page {
 	}
 	public void setTitle(String title) {
 		this.title = title;
+	}
+	
+	public int getCollectnum() {
+		return collectnum;
+	}
+	public void setCollectnum(int collectnum) {
+		this.collectnum = collectnum;
+	}
+	@Override
+	public String toString() {
+		return "Post [id=" + id + ", username=" + username + ", pid=" + pid
+				+ ", title=" + title + ", content=" + content + ", replynum="
+				+ replynum + ", collectnum=" + collectnum + ", date=" + date
+				+ "]";
 	}
 	
 	

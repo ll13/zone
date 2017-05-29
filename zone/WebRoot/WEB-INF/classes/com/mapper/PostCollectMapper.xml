@@ -20,6 +20,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
    
    </delete>
    
+   <select id="checkCollect" parameterType="PostCollect" resultMap="postcollectmap">
    
+      select * from postcollect where username=#{username} and postid=#{postid}
+   </select>
    
 </mapper>
