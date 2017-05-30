@@ -84,9 +84,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
        UPDATE  post SET collectnum=collectnum-1 where id=#{id}
    </update>
    
-   <update id="updatePost" parameterType="Post"  >
-       UPDATE  post SET title=#{title} , content=#{content},pid=#{pid} WHERE id=#{id}
-   </update>
+   
    
    <delete id="delectPostbyId" parameterType="Post" >
        DELETE FROM post WHERE id=#{id}

@@ -148,3 +148,38 @@ hr {
 	margin:10px 10px 15px 0
 }
 
+.left_main .myPost_div{
+	float: right;	
+}
+
+.left_main .myPost_div div{
+	display:inline-block;
+	margin:0 10px 0 0;	
+}
+
+.replylist_div{
+	float: left;
+	width:600px;
+	border:1px solid #ddd;
+	margin:0 0 0 10px;
+}
+.reply_username{
+	float: left;
+	margin: 15px 0 0 20px;
+}
+
+.reply_floor_div{
+	float: right;
+	margin: 15px 20px 0 0;
+}
+
+.reply_content{
+	float: left;
+	margin: 0 20px 20px 20px;
+}
+.reply_content{
+	float: left;
+	width:100%;
+}
+
+

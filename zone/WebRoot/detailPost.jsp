@@ -74,16 +74,15 @@
           <div>
              <h3><p >&nbsp;&nbsp;&nbsp;${post.title}</a></h3>
 			   <div>
-			      <div class='post_username'> 楼主 :&nbsp; <a href='#'>${post.username}</a> &nbsp;&nbsp;  ${post.date}</div>
-			      <div class='myQuestion_div'>
-		             <div><a class='editMyPost'>编辑</a></div><span>|</span>
-		             <div><a class='delectMyPost' >删除</a></div>
-		          </div>			        
+			      <div class='post_username'> 楼主 :&nbsp; <a href='#'>${post.username}</a> &nbsp;&nbsp;  ${post.date}</div>			      			        
 			         <div class='num'>
 			            <div><a class="collect_number" select="unselect">收藏  <em> ${post.collectnum} </em></a></div>
 			       </div>
 			   </div>
 			   <div class='post_content'> ${post.content}</div>
+			   <div class='myPost_div'>
+		             <div><a class='delectMyPost' >删除</a></div>
+		       </div>
 			   <div class='post_content'>&nbsp;</div>
 			   <div class='post_content'>&nbsp;</div>
 		 </div>							
@@ -93,16 +92,20 @@
 		    <div class='replylist'>
 		       <c:forEach items="${replylist}" var="reply">
 		         <div class="replylist_div">
-		           <div class='reply_username'> <a href='#'> ${reply.username}</a>&nbsp;&nbsp;${reply.date}</div>
-		           <div>  楼层  <em>${reply.floor}</em></div>
+		           <div>
+		              <div class='reply_username'> <a href='#'> ${reply.username}</a>&nbsp;&nbsp;回复&nbsp;&nbsp;${reply.date}</div>
+		              <div class="reply_floor_div">  楼层  <em>${reply.floor}</em></div>
+		           </div>
+		           <hr noshade='noshade' class="postlistLine" size='1' />
 		           <div class='reply_content'>
 		             ${reply.content}
 		           </div>
-		           <hr noshade='noshade' class="postlistLine" size='1' />
+		           <div class='reply_content'>&nbsp;</div>
+			       <div class='reply_content'>&nbsp;</div>
 		         </div>
+		         <hr noshade='noshade' class="postlistLine" size='1' />
 		       </c:forEach>
 		    </div>
-		    
 		    
 		    <div class='replyEdit'>
 		       <form id="addreplyform" class="replyform" title="回复" >
@@ -147,7 +150,7 @@
             </div>
 		</div>
 	</div>
-
+    
 	
 	<form id="addpostform" title="发表帖子" >
 		<p>

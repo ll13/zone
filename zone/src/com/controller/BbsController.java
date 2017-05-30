@@ -195,16 +195,7 @@ public class BbsController {
 		return "1";
 	}
 	
-	@RequestMapping("/updatePost.do")
-	public @ResponseBody String updatePost(String id,String title,String content,String pid){
-		Post post=new Post();
-		post.setId(Integer.parseInt(id));
-		post.setTitle(title);
-		post.setContent(content);
-		post.setPid(Integer.parseInt(pid));
-		postMapper.updatePost(post);
-		return "1";
-	}
+	
 	
 	@RequestMapping("/delectPost.do")
 	public @ResponseBody String delectPost(String postid){

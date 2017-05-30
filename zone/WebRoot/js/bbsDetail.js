@@ -36,17 +36,19 @@ $(function(){
 							var content=$(".replyEdit .uEditorIframe").contents().find("#iframeBody").html();
 							$(".replyEdit .uEditorIframe").contents().find("#iframeBody").html("");
 							$("#loading").dialog("close");
-							$(".replylist").prepend("<div class='replylist_div'>" +
+							$(".replylist").append("<div class='replylist_div'><div>" +
 									                     " <div class='reply_username'>" +
-									                         " <a href='#'>"+$.cookie("user")+"</a>&nbsp;&nbsp;"+
+									                         " <a href='#'>"+$.cookie("user")+"</a>&nbsp;&nbsp;回复&nbsp;&nbsp;"+
 									                         date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate()+
-									                      "</div><div>  楼层  <em>"+floornum+"</em></div>"+
-									                       "<div class='answerContent'>" +   
+									                      "</div><div class='reply_floor_div'>  楼层  <em>"+floornum+"</em></div></div>" +
+									                      "<hr noshade='noshade' class='postlistLine' size='1' />"+
+									                       "<div class='reply_content'>" +   
 									                       content+
-									                       "</div><hr noshade='noshade' class='answerlistLine' size='1' />" +
-							                            "</div>"); 	
+									                       "</div>" +
+							                            "<div class='reply_content'>&nbsp;</div><div class='reply_content'>&nbsp;</div></div>" +
+							                            "<hr noshade='noshade' class='postlistLine' size='1' />"); 	
 							
-						  },1000);
+						   },1000);
 			 
 					  }  
 					  
@@ -139,9 +141,51 @@ $(function(){
 			}
 		});
 		
+	
+		//删除问题
+	    $(".left_main .delectMyPost").click(function(){
+	    	 if(confirm("是否删除帖子")){
+	    	    var replynum=$(".reply_number_detail em ").html();
+	    	    var postid=$(".postid").val();
+	    	    if(replynum==0){
+	    	    	$.ajax({
+	    	    		url:"delectPost.do",
+	    	    		type:"POST",
+	    	    		data:{
+	    	    			postid:postid,
+	    	    		},
+	    	    		success:function(responseText,statusText){
+	    	    			$("#loading").css("background","url(img/success.gif) no-repeat 20px center").html("删除问题成功");
+	    	    			setTimeout(function(){
+	    	    				 $("#loading").dialog("close");
+	    	    				 $("#loading").css("background","url(img/loading.gif) no-repeat 20px center").html("数据交互中.....");
+	    	    				 location.href = "bbs.jsp"
+	    	    			},1000)
+	    	    		}
+	    	    		
+	    	    	});
+	    	    }else{
+	    	    	alert("帖子有回复，无法删除");
+	    	    }
+	    	  }
+		});
 		
+	    //修改和删除只在我的问题中的显示
+	    function showMyPost_div(){
+	    	var cookiename=$.cookie("user");
+	    	var username=$(".post_username a").html().replace(/(^\s*)|(\s*$)/g,'');    	
+	    	if(cookiename==username){
+	    		
+	    		 $(".myPost_div").show();
+	    		 
+	    	}
+	    }
+	    $(".myPost_div").hide();	
 		
 	  initCollect();
 	  getCatalog();
+	  showMyPost_div();
       $(".uEditorCustom").uEditor();
 });
+
+

@@ -277,8 +277,7 @@ function showpostcollect(){
 
 function checkloadmorepost(type){
 	var username=$.cookie('user');
-	var pid=$(".left_main .pid").val();	
-	alert(type);
+	var pid=$(".left_main .pid").val();		
 	$.ajax({
 		url:"getPostTotalPage.do",
 		type:"POST",
@@ -347,7 +346,7 @@ function showPost(type,pid,page,username){
 		               "<div class='post_content'>"+summary[index]+"</div></div>"+							
 		               "<hr noshade='noshade' size='1' />";
 				 });
-				 $("#loadmorepost").before(html);
+				 $("#loadmorepost").before(html); 
 				 				
 	        }
 	   });

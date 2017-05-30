@@ -20,8 +20,7 @@ public interface PostMapper {
 	public  int getPostIdByTitleUsername(Post post);
 	public  int updateReplynum(Post post);
 	public  int upCollectnum(Post post);
-    public  int downCollectnum(Post post);
-    public  int updatePost(Post post); 
+    public  int downCollectnum(Post post); 
     public  int delectPostbyId(Post post);
     
 }
