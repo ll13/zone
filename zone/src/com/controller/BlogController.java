@@ -20,6 +20,13 @@ public class BlogController {
 	
 	
 	@RequestMapping("/showBlog.do")
+	public @ResponseBody List<Blog> rankOfBlog(String type,String keyword,int page){
+		Blog blog =new Blog();
+		List<Blog> Bloglist=blogMapper.RankOfClicknum(blog);
+		return Bloglist;
+}                     
+	
+	@RequestMapping("/showBlog.do")
 	public @ResponseBody List<Blog> showBlog(String type,String keyword,int page){
 		Blog blog =new Blog();
 		List<Blog> Bloglist=blogMapper.getBlogByAuthor(blog);
@@ -27,19 +34,17 @@ public class BlogController {
 		
 		
 		return Bloglist;
-}
+}                     
 	@RequestMapping("/showDetailBlog.do")
     public String showDetailBlog(int id,Model model){
 		Blog Blog=new Blog();
 		Blog.setId(id);
-		
-		Blog resultBlog=blogMapper.getBlogbyId(Blog);		
+		Blog resultBlog=blogMapper.getBlogById(Blog);		
 		//BlogMapper.updateBrowsenum(Blog);更新点击量。
-		
 		model.addAttribute("Blog", resultBlog);
 		
 		model.addAttribute("id", id);
-		System.out.print("success");
+		
 		return "blog/Blog_detailBlog";
 	}
 }

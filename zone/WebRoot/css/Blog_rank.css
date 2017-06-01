@@ -1,0 +1,25 @@
+@CHARSET "UTF-8";
+body{
+	margin: 40px 0 0 0;
+	padding: 0;
+	font-size: 12px;
+	font-family: 宋体;
+	background: #fff;
+}
+
+#ui-tabs-3{
+	position:relative;
+	text-align:center;
+}
+.rankOfBlog,.rankOfAuthor,.rankOfComment{
+	width:30%;
+	height:80%;
+	display:inline-block;
+	position:relative;
+	margin:15px;
+	border:1px solid #E5E5E5; 
+}
+h1{
+	
+}
+

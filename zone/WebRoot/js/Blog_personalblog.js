@@ -11,10 +11,10 @@ $(function(){
 function showblog(type,keyword,page){
 	//$(".main_right").append("Hello,"+$.cookie("user"));
 	 $.ajax({
-		  url:"showBlog.do",
+		  url:"showBlog.do?Author=,
 		  type:"POST",
 		  data:{
-			  keyword:keyword,
+			  user:"lili",
 			  page:page,
 			  type:type,
 		        },
@@ -31,7 +31,7 @@ function showblog(type,keyword,page){
 			 
 			 
 			 
-			 html+="<h1><a href=showDetailBlog?id="+value.id +">"+value.title+"</a></h1>";
+			 html+="<h1><a href=showDetailBlog.do?id="+value.id +">"+value.title+"</a></h1>";
 			 html+="<h2>"+value.pubtime+"</h2>"
 			 html+="<p>"+summary[index]+"</p>"
 			

@@ -32,16 +32,14 @@
 	    <script type="text/javascript" src="js/jquery.cookie.js"></script>
 		<script type="text/javascript" src="js/md5.js"></script>
 
-
-
-
 		<link rel="stylesheet" href="css/bootstrap.css" type="text/css"></link>
 		<link rel="stylesheet" href="uEditor/uEditor.css" type="text/css"></link>
-		<link rel="stylesheet" href="css/Blog.css" type="text/css"></link>
+		
 		
 		<script type="text/javascript" src="js/bootstrap.js"></script>
 		<script type="text/javascript" src="js/Blog.js"></script>
-
+		<link rel="stylesheet" href="css/Blog_homepage.css" type="text/css"></link>
+		<link rel="stylesheet" href="css/Blog_rank.css" type="text/css"></link>
 </head>
 
 <body>
@@ -60,6 +58,7 @@
                   <li><a href="blog/Blog_rank.jsp" id="Blog_rank">排行榜</a></li>
               </ul>
              </div>
+             
       </div>
       
       

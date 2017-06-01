@@ -31,7 +31,7 @@
 	    <script type="text/javascript" src="js/jquery.form.js"></script>
 	    <script type="text/javascript" src="js/jquery.cookie.js"></script>
 		<script type="text/javascript" src="js/md5.js"></script>
-		<script type="text/javascript" src="js/Blog_personalblog.js"></script>
+		
 
 
 
@@ -71,11 +71,11 @@
 	</div>
 </div>
 	<div class="main_right">
-	 	 <h1>${blog.title}</h1>
-		 <div class="blog_author"> <a href='#'> ${blog.author}</a>发表于    ${blog.pubtime}</div>
-		 <div class="blog_content"> ${blog.content}</div>
+		 <p></p>
+	 	 <h1>标题+${blog.title}</h1>
+		 <div class="blog_author"> <a href='#'>${blog.author}</a>发表于    ${blog.pubtime}</div>
+		 <div class="blog_content">${blog.content}</div>
 		 <div class="blog_data">阅读 ${blog.clicknum}</div>
-		
 	</div>
 </div>
 
