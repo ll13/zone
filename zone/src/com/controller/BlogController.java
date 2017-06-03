@@ -19,19 +19,19 @@ public class BlogController {
 	BlogMapper blogMapper;
 	
 	
-	@RequestMapping("/showBlog.do")
+	@RequestMapping("/RankOfClicknum.do")
 	public @ResponseBody List<Blog> rankOfBlog(String type,String keyword,int page){
 		Blog blog =new Blog();
 		List<Blog> Bloglist=blogMapper.RankOfClicknum(blog);
+		System.out.println(Bloglist);
 		return Bloglist;
 }                     
 	
-	@RequestMapping("/showBlog.do")
-	public @ResponseBody List<Blog> showBlog(String type,String keyword,int page){
-		Blog blog =new Blog();
-		List<Blog> Bloglist=blogMapper.getBlogByAuthor(blog);
-
-		
+	@RequestMapping("/showBlogByAuthor.do")
+	public @ResponseBody List<Blog> showBlogByAuthor(String Author,Model model){
+		Blog Blog =new Blog();
+		Blog.setAuthor(Author);
+		List<Blog> Bloglist=blogMapper.getBlogByAuthor(Blog);
 		
 		return Bloglist;
 }                     

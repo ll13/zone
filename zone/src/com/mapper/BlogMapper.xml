@@ -18,7 +18,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
       <result property="commentpermission" column="commentpermission"/>
    </resultMap>
   
-  
+<select id="RankOfClicknum" parameterType="Blog" resultMap="blogmap">
+   
+       select * from blog order by clicknum DESC limit 10;
+   
+ </select>  
 
 <select id="getBlogByAuthor" parameterType="Blog" resultMap="blogmap">
    

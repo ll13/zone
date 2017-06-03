@@ -35,11 +35,11 @@
 		<link rel="stylesheet" href="css/bootstrap.css" type="text/css"></link>
 		<link rel="stylesheet" href="uEditor/uEditor.css" type="text/css"></link>
 		
-		
-		<script type="text/javascript" src="js/bootstrap.js"></script>
-		<script type="text/javascript" src="js/Blog.js"></script>
 		<link rel="stylesheet" href="css/Blog_homepage.css" type="text/css"></link>
 		<link rel="stylesheet" href="css/Blog_rank.css" type="text/css"></link>
+		
+		<script type="text/javascript" src="js/bootstrap.js"></script>
+		<script type="text/javascript" src="js/rankOfBlog.js"></script>
 </head>
 
 <body>

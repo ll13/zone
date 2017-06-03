@@ -9,7 +9,7 @@
 		
 		
 		<script type="text/javascript" src="js/bootstrap.js"></script>
-		<script type="text/javascript" src="js/Blog.js"></script>
+		<script type="text/javascript" src="js/rankOfBlog.js"></script>
 		<link rel="stylesheet" href="css/Blog_rank.css" type="text/css"></link>
 </head>
 
