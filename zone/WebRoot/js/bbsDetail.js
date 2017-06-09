@@ -102,7 +102,6 @@ $(function(){
 				var num=Number($(".left_main .collect_number em").html())+1;
 				var value="已收藏<em>"+num+"</em>";
 				var postid=$(".replyEdit .postid").val();
-				alert(postid);
 				var username=$.cookie('user');
 				$(this).html(value);
 				$.ajax({
@@ -146,8 +145,9 @@ $(function(){
 	    $(".left_main .delectMyPost").click(function(){
 	    	 if(confirm("是否删除帖子")){
 	    	    var replynum=$(".reply_number_detail em ").html();
+	    	    var collectnum=$(".collect_number em").html();
 	    	    var postid=$(".postid").val();
-	    	    if(replynum==0){
+	    	    if(replynum==0&&collectnum==0){
 	    	    	$.ajax({
 	    	    		url:"delectPost.do",
 	    	    		type:"POST",
@@ -165,7 +165,7 @@ $(function(){
 	    	    		
 	    	    	});
 	    	    }else{
-	    	    	alert("帖子有回复，无法删除");
+	    	    	alert("帖子有回复或收藏，无法删除");
 	    	    }
 	    	  }
 		});

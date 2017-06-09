@@ -2,6 +2,10 @@ package com.po;
 
 import java.sql.Date;
 
+/**
+ * @author lili
+ *
+ */
 public class Question extends Page{
 	private int questionid;
 	private String username;
@@ -12,7 +16,7 @@ public class Question extends Page{
 	private int answernum;
 	private int browsenum;
 	private int collectnum;
-	private int isright;
+	private int haveright;
 	
 	
 	public int getQuestionid() {
@@ -71,11 +75,12 @@ public class Question extends Page{
 	}
 	
 	
-	public int getIsright() {
-		return isright;
+	
+	public int getHaveright() {
+		return haveright;
 	}
-	public void setIsright(int isright) {
-		this.isright = isright;
+	public void setHaveright(int haveright) {
+		this.haveright = haveright;
 	}
 	@Override
 	public String toString() {

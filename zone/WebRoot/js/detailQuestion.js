@@ -140,8 +140,15 @@ $(function(){
 	//修改我的提问
 	$(".left_main .editMyQuestion").click(function(){
 		if($.cookie("user")){
-			$("#update_question").dialog("open");
-			insertQuestionContent();
+			
+			var answernum=$(".answer_number_detail em ").html();
+    	    if(answernum==0){
+			
+			    $("#update_question").dialog("open");
+			    insertQuestionContent();
+    	    }else{
+    	    	alert("问题有回答，无法修改");
+    	    }
 		}
 		else
 		{
@@ -171,54 +178,72 @@ $(function(){
 		height:400,
 		buttons:{
           "提交":function(){
-        	 
-        	  var content=$("#update_question .uEditorIframe").contents().find("#iframeBody").html();
-        	  var username=$.cookie("user");
-        	  var point=$("#updateQuestionPoint").val();
-        	  var questionid=$(".question_id").val();
-        	  $(this).ajaxSubmit({
-        		  url:"updateQuestion.do",
-			      type:"POST",
-				  data:{
-					    questionid:questionid,
-						user:username,
-        	            content:content,
-        	            point:point,
-					},
-					
-					beforeSubmit:function(formData,jqForm,options){
-						$("#update_question").dialog("widget").find("button").eq(1).button("disable");    //提交按钮置灰
-						$("#loading").dialog("open");    //打开进度框
-			       },
-			       success:function(responseText,statusText){
-						
-						$("#update_question").dialog("widget").find("button").eq(1).button("enable");
-						$("#loading").css("background","url(img/success.gif) no-repeat 20px center").html("修改成功.....");
-						
-						setTimeout(function(){
-							  $("#loading").dialog("close");
-							  $("#update_question").dialog("close");
-							  $(".uEditor").contents().find(".uEditorButtonHTML").click();
-							  $(".uEditorIframe").contents().find("#iframeBody").html("");
-							  $("#loading").css("background","url(img/loading.gif) no-repeat 20px center").html("数据交互中.....");
-							  location.href = "showDetailQuestion.do?questionid="+questionid;
-						},1000)
-				  },
+       	
+      	    	var content=$("#update_question .uEditorIframe").contents().find("#iframeBody").html();
+            	var username=$.cookie("user");
+            	var point=$("#updateQuestionPoint").val();
+            	var questionid=$(".question_id").val();
+            	
+            	$(this).ajaxSubmit({
+          		  url:"updateQuestion.do",
+  			      type:"POST",
+  				  data:{
+  					    questionid:questionid,
+  						username:username,
+          	            content:content,
+          	            point:point,
+  					},
+  					
+  					beforeSubmit:function(formData,jqForm,options){
+  						$("#update_question").dialog("widget").find("button").eq(1).button("disable");    //提交按钮置灰
+  						$("#loading").dialog("open");    //打开进度框
+  			       },
+  			       success:function(responseText,statusText){
+  			    	   
+  			    	   if(responseText=="fail"){
+  			    		    $("#update_question").dialog("widget").find("button").eq(1).button("enable");
+  					    	$("#loading").css("background","url(img/warning.png) no-repeat 20px center").html("积分不足");
+  					    	$("#update_question .uEditor").contents().find(".uEditorButtonHTML").click();
+  					    	$("#update_question .uEditor").contents().find(".uEditorButtonHTML").click();
+  					    	$("#update_question .uEditorIframe").contents().find("#iframeBody").html(content);
+  					    	setTimeout(function(){
+  								  $("#loading").dialog("close");														  
+  								  $("#loading").css("background","url(img/loading.gif) no-repeat 20px center").html("数据交互中.....");
+  								 },1000); 
+  					    	
+  					    	
+  					    	
+  					    }else{
+  						
+  						   $("#update_question").dialog("widget").find("button").eq(1).button("enable");
+  						   $("#loading").css("background","url(img/success.gif) no-repeat 20px center").html("修改成功.....");
+  						
+  						   setTimeout(function(){
+  							  $("#loading").dialog("close");
+  							  $("#update_question").dialog("close");
+  							  $("#update_question .uEditor").contents().find(".uEditorButtonHTML").click();
+  							  $("#update_question .uEditorIframe").contents().find("#iframeBody").html("");
+  							  $("#loading").css("background","url(img/loading.gif) no-repeat 20px center").html("数据交互中.....");
+  							  location.href = "showDetailQuestion.do?questionid="+questionid;
+  						 },1000)
+  					   }
+  				    }, 
 			    
-			    
-        	  });
-        	 
+          	    });
+      	    
+       	 
         	  
-          }
-		         },
+            }
+		  },
 	 });         
 	
 	//删除问题
     $(".left_main .delectMyQuestion").click(function(){
     	 if(confirm("是否删除问题")){
     	    var answernum=$(".answer_number_detail em ").html();
+    	    var collectnum=$(".collectQuestion em").html();
     	    var questionid=$(".question_id").val();
-    	    if(answernum==0){
+    	    if(answernum==0&&collectnum==0){
     	    	$.ajax({
     	    		url:"delectQuestion.do",
     	    		type:"POST",
@@ -236,7 +261,7 @@ $(function(){
     	    		
     	    	});
     	    }else{
-    	    	alert("问题已回答，无法删除");
+    	    	alert("问题有回答或收藏，无法删除");
     	    }
     	  }
 	});

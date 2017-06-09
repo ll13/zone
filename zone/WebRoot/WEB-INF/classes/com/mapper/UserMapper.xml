@@ -39,7 +39,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
    </select>
    
    <update id="updatePoint" parameterType="User">
-   		update user SET point=#{point} where userid=#{userid}  
+   		update user SET point=#{point} where userid=#{id}  
    </update>
   
    

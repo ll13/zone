@@ -87,10 +87,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		    <div class='queston_share_bar'>
 		        <div><a class="browseQuestion">浏览 <em>${question.browsenum}</em></a></div><span>|</span>
 		        <div><a class="collectQuestion" select="unselect">收藏  <em> ${question.collectnum} </em></a></div>
+		        <div type="hidden" class="QuestionRightAnswer"  style="display:none;"> ${question.haveright}</div>
 		     </div>
 		    <hr noshade='noshade' size='1' />
 		    <div class='answer_number_detail'>回答<em> ${question.answernum}</em> </div>
 		    <hr noshade='noshade' size='1' />
+		    <div class='answerRight'>
+		       <c:forEach items="${answerRight}" var="answer">
+		         <div class="answerlist_answer">
+		           <div class='answer_username'> <a href='#'> ${answer.username}</a>&nbsp;&nbsp;    ${answer.date}</div>
+		           <div class='answerContent'>
+		             ${answer.content}
+		           </div>
+		           <hr noshade='noshade' class="answerlistLine" size='1' />
+		         </div>
+		       </c:forEach>
+		    </div>
 		    <div class='answerlist'>
 		       <c:forEach items="${answerlist}" var="answer">
 		         <div class="answerlist_answer">
@@ -98,6 +110,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		           <div class='answerContent'>
 		             ${answer.content}
 		           </div>
+		           <div><a  class="getRightAnswer">采纳</a></div>
 		           <hr noshade='noshade' class="answerlistLine" size='1' />
 		         </div>
 		       </c:forEach>
@@ -145,7 +158,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<textarea class="updateQuestionEdit" >${question.content}</textarea>
 		</p>
        
-         <p>  <label>积分</label> <input type="text" class="text"  name="updateQuestionPoint" id="updateQuestionPoint" value="${question.point} "/></p>
+         <p>  <label>积分   </label> ${question.point}&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+              <label>增加积分 </label><input type="text" class="text"  name="updateQuestionPoint" id="updateQuestionPoint" value="0"/>
+         </p>
         
 	</form>
     <form id="question" title="提问" >

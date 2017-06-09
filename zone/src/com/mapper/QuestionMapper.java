@@ -35,6 +35,6 @@ public interface QuestionMapper {
     public  int updateQuestionbyquestionid(Question question);
     public  int delectQuestionbyquestionid(Question question);
       
-   // public int updateQuestionRightAnswer(Question question);
+    public int updateQuestionRightAnswer(Question question);
     
 }

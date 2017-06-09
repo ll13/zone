@@ -15,6 +15,7 @@ import com.mapper.QuestionMapper;
 import com.po.Answer;
 import com.po.Question;
 import com.po.QuestionCollect;
+import com.service.PointService;
 import com.util.Cache;
 
 
@@ -28,7 +29,8 @@ public class AskController {
 	AnswerMapper answerMapper;
 	@Resource(name="questionCollectMapper")
 	QuestionCollectMapper questionCollectMapper;
-	
+	@Resource(name="pointServiceImpl")
+	PointService pointService;
 	
 	int questionPageSize=3;
 	
@@ -41,9 +43,16 @@ public class AskController {
 		question.setTitle(title);
 		question.setContent(questionContent);
 		question.setPoint(question_point);
-        questionMapper.insertQuestion(question);
-		String questionid=questionMapper.getIdbyTitle(question)+"";
-		return questionid;
+		
+		boolean flag=pointService.reducePoint(user, Integer.parseInt(question_point), "悬赏问题");
+		if(flag){
+			questionMapper.insertQuestion(question);
+			String questionid=questionMapper.getIdbyTitle(question)+"";
+			return questionid;
+		}else{
+			return "fail";
+		}
+           
 	}
 	
 	@RequestMapping("/getQuestionTotalPage.do")
@@ -229,14 +238,40 @@ public class AskController {
 	}
 	
 	@RequestMapping("/updateQuestion.do")
-	public @ResponseBody String updateQuestion(String questionid,String title,String content,String point){
+	public @ResponseBody String updateQuestion(String questionid,String title,String content,String point,String username){
 		Question question=new Question();
 		question.setQuestionid(Integer.parseInt(questionid));
 		question.setTitle(title);
 		question.setContent(content);
 		question.setPoint(point);
-		questionMapper.updateQuestionbyquestionid(question);
+	
+		boolean flag=pointService.reducePoint(username, Integer.parseInt(point), "悬赏问题");
+		if(flag){
+			questionMapper.updateQuestionbyquestionid(question);
+			return "1";
+		}else{
+			return "fail";
+		}
+		
+	}
+	
+	@RequestMapping("/addPointbyAnswer.do")
+	public @ResponseBody String addPointbyAnswer(String username,String point,String questionid,String answerid){
+		pointService.addPoint(username, Integer.parseInt(point), "回答问题被采纳");
+		
+		Question question=new Question();
+		question.setQuestionid(Integer.parseInt(questionid));
+		question.setHaveright(1);
+		questionMapper.updateQuestionRightAnswer(question);
+		
+		Answer answer=new Answer();
+		answer.setIsright(1);
+		answer.setAnswerid(Integer.parseInt(answerid));
+		answerMapper.updateAnswerRight(answer);
+		
 		return "1";
+		
+		
 	}
 	
 	@RequestMapping("/delectQuestion.do")

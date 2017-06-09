@@ -39,6 +39,7 @@ public class BbsController {
 	@Resource(name="catalogMapper")
 	CatalogMapper catalogMapper;
 	
+	
 	int postPageSize=3;
 	
 	
@@ -51,6 +52,8 @@ public class BbsController {
 		post.setUsername(username);
 		post.setPid(Integer.parseInt(pid));
         postMapper.insertPost(post);
+        
+        
 		int id=postMapper.getPostIdByTitleUsername(post);
 		return id+"";
 	}
@@ -204,6 +207,7 @@ public class BbsController {
 		postMapper.delectPostbyId(post);
 		return "1";
 	}
+	
 	
 	
 	

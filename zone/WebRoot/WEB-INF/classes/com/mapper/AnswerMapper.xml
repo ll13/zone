@@ -11,7 +11,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
       <result property="username" column="username"/>
       <result property="content" column="content"/>
       <result property="date" column="date"/>
-      <result property="haveright" column="haveright"/>
+      <result property="isright" column="isright"/>
    </resultMap>
    
    
@@ -30,7 +30,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
    </select>
   
     <update id="updateAnswerRight" parameterType="Answer" >
-       update answer SET isright=isright+1 where answerid=#{answerid}
+       update answer SET isright=#{isright} where answerid=#{answerid}
    </update>
    
    
