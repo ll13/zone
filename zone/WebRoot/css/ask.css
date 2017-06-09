@@ -158,3 +158,20 @@ hr {
 .answer_number_detail{
 	float:left;
 }
+
+.answerRight{
+	display:inline-block;
+	float:left;
+	width:100%;
+}
+
+.rightAnswerLabel{
+	display:inline-block;
+	float:right;
+	width:30%;
+}
+
+.answerRight_username{
+	display:inline-block;
+	width:60%;
+}

@@ -33,5 +33,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
        update answer SET isright=#{isright} where answerid=#{answerid}
    </update>
    
+   <select id="getAnsweridbyAnswer" parameterType="Answer" resultType="int">
+   
+       select answerid from answer where username=#{username} and questionid=#{questionid} and content=#{content} 
+   </select>
+   
    
 </mapper>

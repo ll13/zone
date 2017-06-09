@@ -40,12 +40,14 @@ $(function(){
 								                      "</div>"+
 								                       "<div class='answerContent'>" +   
 								                       content+
-								                       "</div><hr noshade='noshade' class='answerlistLine' size='1' />" +
+								                       "</div>"+
+								                       "<hr noshade='noshade' class='answerlistLine' size='1' />" +
 						                            "</div>"); 								
 					  },1000);
 		 
 				  }  
 				  
+		 	  
 				
 			  });
 			
@@ -250,8 +252,10 @@ $(function(){
     	    		data:{
     	    			questionid:questionid,
     	    		},
+    	    		
     	    		success:function(responseText,statusText){
     	    			$("#loading").css("background","url(img/success.gif) no-repeat 20px center").html("删除问题成功");
+    	    			$("#loading").dialog("open");    //打开进度框
     	    			setTimeout(function(){
     	    				 $("#loading").dialog("close");
     	    				 $("#loading").css("background","url(img/loading.gif) no-repeat 20px center").html("数据交互中.....");
@@ -278,11 +282,55 @@ $(function(){
     }
     $(".myQuestion_div").hide();
     
+    $(".left_main .getRightAnswer").click(function(){
+    	var questionid=$(".question_id").val();
+    	var answerid=$(this).parent().next(".answerid").html();
+    	var answeruser=$(this).parent().parent().find(".answer_username a").html();
+    	var point=$(".left_main .question_point .badge").html();
+    	
+    	$.ajax({
+    		url:"addPointbyAnswer.do",
+    		type:"POST",
+    		data:{
+    			questionid:questionid,
+    			username:answeruser,
+    			point:point,
+    			answerid:answerid,
+    			
+    		},
+    		success:function(responseText,statusText){
+    			
+    			$("#loading").css("background","url(img/success.gif) no-repeat 20px center").html("采纳问题成功");
+    			$("#loading").dialog("open");
+    			setTimeout(function(){
+    				 $("#loading").dialog("close");
+    				 $("#loading").css("background","url(img/loading.gif) no-repeat 20px center").html("数据交互中.....");
+    				 location.href = "showDetailQuestion.do?questionid="+responseText;
+    			},1000)
+    		}
+    		
+    	});
+    	
+    });
     
-    
+    //把采纳隐藏起来，在需要时显示
+  //修改和删除只在我的问题中的显示
+    function showgetRightAnswer_div(){
+    	var cookiename=$.cookie("user");
+    	var username=$(".question_username a").html().replace(/(^\s*)|(\s*$)/g,''); 
+    	var hasright=$(".left_main .QuestionRightAnswer").html();
+    	var point=$(".left_main .question_point .badge").html();
+    	if(cookiename==username&&hasright=='0'&&point!='0'){
+    		 
+    		 $(".getRightAnswer_div").show();
+    		 
+    	}
+    }
+    $(".getRightAnswer_div").hide();
     
     initCollect();
     showMyQuestion_div();
+    showgetRightAnswer_div();
 	showHotQuestion();
 	showNewQuestion();
 	$(".uEditorCustom").uEditor();

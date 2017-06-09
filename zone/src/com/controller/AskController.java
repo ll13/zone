@@ -171,6 +171,19 @@ public class AskController {
 		Answer answer=new Answer();
 		answer.setQuestionid(questionid);
 		List<Answer> resultAnswerList=answerMapper.getAnswerbyqid(answer);
+		
+		if(resultQuestion.getHaveright()==1){
+			for(int i=0;i<resultAnswerList.size();i++){
+				if(resultAnswerList.get(i).getIsright()==1){
+					model.addAttribute("rightAnswer", resultAnswerList.get(i));
+					resultAnswerList.remove(i);
+					break;
+				}
+			}
+		}
+		
+		
+		
 		model.addAttribute("answerlist", resultAnswerList);
 		
 		model.addAttribute("questionid", questionid);
@@ -202,11 +215,10 @@ public class AskController {
 		question.setQuestionid(questionid);
 		questionMapper.updateAnswernum(question);
 		
-		int result=answerMapper.insertAnswer(answer);
-		if(result==1){
-			return "1";
-		}
-		return "0";
+		answerMapper.insertAnswer(answer);
+		int result=answerMapper.getAnsweridbyAnswer(answer);
+		
+		return result+"";
 	}
 	
 	@RequestMapping("/addCollectnum.do")
@@ -257,6 +269,9 @@ public class AskController {
 	
 	@RequestMapping("/addPointbyAnswer.do")
 	public @ResponseBody String addPointbyAnswer(String username,String point,String questionid,String answerid){
+		point=point.trim();
+		username=username.trim();
+		answerid=answerid.trim();
 		pointService.addPoint(username, Integer.parseInt(point), "回答问题被采纳");
 		
 		Question question=new Question();
@@ -269,7 +284,7 @@ public class AskController {
 		answer.setAnswerid(Integer.parseInt(answerid));
 		answerMapper.updateAnswerRight(answer);
 		
-		return "1";
+		return questionid;
 		
 		
 	}

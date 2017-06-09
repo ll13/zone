@@ -8,4 +8,5 @@ public interface AnswerMapper {
 	public  int insertAnswer(Answer answer);
     public  List<Answer> getAnswerbyqid(Answer answer);
     public  int updateAnswerRight(Answer answer);
+    public  int getAnsweridbyAnswer(Answer answer);
 }

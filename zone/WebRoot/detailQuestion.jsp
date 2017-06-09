@@ -92,17 +92,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		    <hr noshade='noshade' size='1' />
 		    <div class='answer_number_detail'>回答<em> ${question.answernum}</em> </div>
 		    <hr noshade='noshade' size='1' />
-		    <div class='answerRight'>
-		       <c:forEach items="${answerRight}" var="answer">
-		         <div class="answerlist_answer">
-		           <div class='answer_username'> <a href='#'> ${answer.username}</a>&nbsp;&nbsp;    ${answer.date}</div>
-		           <div class='answerContent'>
-		             ${answer.content}
+		    <c:choose>
+		      <c:when test="${question.haveright==1}">
+		        <div class='answerRight'>
+		           <div>
+		             <div class='answerRight_username'> <a href='#'> ${rightAnswer.username}</a>&nbsp;&nbsp;    ${rightAnswer.date}</div>
+		             <lable  class="rightAnswerLabel">已采纳</label>
 		           </div>
+		           <div class='answerContent'>
+		             ${rightAnswer.content}
+		           </div>
+		           <div class="answerid" style="display: none">${answer.answerid} </div>
 		           <hr noshade='noshade' class="answerlistLine" size='1' />
-		         </div>
-		       </c:forEach>
-		    </div>
+		        </div>
+		      </c:when>  
+		   </c:choose>
 		    <div class='answerlist'>
 		       <c:forEach items="${answerlist}" var="answer">
 		         <div class="answerlist_answer">
@@ -110,7 +114,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		           <div class='answerContent'>
 		             ${answer.content}
 		           </div>
-		           <div><a  class="getRightAnswer">采纳</a></div>
+		           <div class="getRightAnswer_div"><a  class="getRightAnswer">采纳</a></div><div class="answerid" style="display: none">${answer.answerid} </div>
 		           <hr noshade='noshade' class="answerlistLine" size='1' />
 		         </div>
 		       </c:forEach>

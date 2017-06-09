@@ -155,7 +155,8 @@ $(function(){
 	    	    			postid:postid,
 	    	    		},
 	    	    		success:function(responseText,statusText){
-	    	    			$("#loading").css("background","url(img/success.gif) no-repeat 20px center").html("删除问题成功");
+	    	    			 $("#loading").css("background","url(img/success.gif) no-repeat 20px center").html("删除问题成功");
+	    	    			 $("#loading").dialog("open");
 	    	    			setTimeout(function(){
 	    	    				 $("#loading").dialog("close");
 	    	    				 $("#loading").css("background","url(img/loading.gif) no-repeat 20px center").html("数据交互中.....");
