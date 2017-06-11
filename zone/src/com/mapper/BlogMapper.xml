@@ -23,6 +23,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
        select * from blog order by clicknum DESC limit 10;
    
  </select>  
+ <select id="RankOfCommentnum" parameterType="Blog" resultMap="blogmap">
+   
+       select * from blog order by commentnum DESC limit 10;
+   
+ </select> 
 
 <select id="getBlogByAuthor" parameterType="Blog" resultMap="blogmap">
    

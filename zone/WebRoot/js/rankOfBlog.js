@@ -1,8 +1,9 @@
 $(function(){
-	alert("123");
+	//alert("123");
 	var type=1;
 	var page=2;
-	RankOfClicknum(type,"",page);
+	//RankOfClicknum(type,"",page);
+	//$(".main_left").append("123");
 });//function 结束
 
 
@@ -24,4 +25,5 @@ function RankOfClicknum(type,keyword,page){
 		 $(".main_left").append(html);
 		 }
   });
+}
 }

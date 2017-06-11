@@ -19,14 +19,25 @@ public class BlogController {
 	BlogMapper blogMapper;
 	
 	
+
 	@RequestMapping("/RankOfClicknum.do")
-	public @ResponseBody List<Blog> rankOfBlog(String type,String keyword,int page){
+	public @ResponseBody List<Blog> rankOfClicknum(String type,String keyword,int page){
 		Blog blog =new Blog();
 		List<Blog> Bloglist=blogMapper.RankOfClicknum(blog);
-		System.out.println(Bloglist);
 		return Bloglist;
 }                     
-	
+	@RequestMapping("/RankOfCollectnum.do")
+	public @ResponseBody List<Blog> rankOfCollectnum(String type,String keyword,int page){
+		Blog blog =new Blog();
+		List<Blog> Bloglist=blogMapper.RankOfClollectnum(blog);
+		return Bloglist;
+}                     
+	@RequestMapping("/RankOfCommentnum.do")
+	public @ResponseBody List<Blog> rankOfCommentnum(String type,String keyword,int page){
+		Blog blog =new Blog();
+		List<Blog> Bloglist=blogMapper.RankOfCommentnum(blog);
+		return Bloglist;
+}                     
 	@RequestMapping("/showBlogByAuthor.do")
 	public @ResponseBody List<Blog> showBlogByAuthor(String Author,Model model){
 		Blog Blog =new Blog();
