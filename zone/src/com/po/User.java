@@ -8,6 +8,10 @@ public class User {
 	private String sex;
 	private String birthday;
 	private int point;
+	private String description;
+	private int phone;
+	private String occupation;
+	
 	
 	public int getId() {
 		return id;
@@ -52,6 +56,28 @@ public class User {
 	}
 	public void setPoint(int point) {
 		this.point = point;
+		
+		
+	}
+	
+	
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	public int getPhone() {
+		return phone;
+	}
+	public void setPhone(int phone) {
+		this.phone = phone;
+	}
+	public String getOccupation() {
+		return occupation;
+	}
+	public void setOccupation(String occupation) {
+		this.occupation = occupation;
 	}
 	@Override
 	public String toString() {

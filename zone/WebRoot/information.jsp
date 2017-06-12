@@ -66,22 +66,22 @@
         	
 		<div class="left_main">
 		 	<ul id="myTab" class="nav nav-tabs">
-	           <li class="active"><a href="#userblog" data-toggle="tab">发表的博客 </a></li>
-	           <li><a href="#userpost" data-toggle="tab">发表的帖子</a></li>
-	           <li><a href="#userquestion" data-toggle="tab">发表的问题</a></li>
-	           <li><a href="#userfile" data-toggle="tab">上传的文件</a></li>
+	           <li class="active"><a href="#updateinformation" data-toggle="tab">修改信息 </a></li>
+	           <li><a href="#updatepassword" data-toggle="tab">修改密码</a></li>
+	           <li><a href="#showmessage" data-toggle="tab">查看信息</a></li>
+	           <li><a href="#sendmessage" data-toggle="tab">发送信息</a></li>
 	        </ul>
             <div id="myTabContent" class="tab-content">
-	           <div class="tab-pane fade in active" id="userblog">
+	           <div class="tab-pane fade in active" id="updateinformation">
 		          <p>blog</p>
 	           </div>
-	           <div class="tab-pane fade" id="userpost">
+	           <div class="tab-pane fade" id="updatepassword">
 		          <p>post</p>
 	           </div>
-	           <div class="tab-pane fade" id="userquestion">
+	           <div class="tab-pane fade" id="showmessage">
 		          <p>question</p>
 	           </div>
-	           <div class="tab-pane fade" id="userfile">
+	           <div class="tab-pane fade" id="sendmessage">
 		          <p>file</p>
 	           </div>	
             </div>

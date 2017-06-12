@@ -13,6 +13,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
       <result property="sex" column="sex"/>
       <result property="birthday" column="birthday"/>
       <result property="point" column="point"/>
+      <result property="description" column="description"/>
+      <result property="phone" column="phone"/>
+      <result property="occupation" column="occupation"/>
+      
    </resultMap>
    
    
@@ -40,6 +44,22 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
    
    <update id="updatePoint" parameterType="User">
    		update user SET point=#{point} where userid=#{id}  
+   </update>
+   
+   <select id="getMyCollectUser" parameterType="User" resultMap="usermap">
+		select * from user where username=(select collectname from usercollect where username=#{name})
+   </select>
+   
+   <select id="getCollectme" parameterType="User" resultMap="usermap">
+		select * from user where username=(select username from usercollect where collectname=#{name})
+   </select>
+   
+   <update id="updateUser" parameterType="User">
+   		update user SET email=#{email},sex=#{sex},birthday=#{birthday},description=#{description},phone=#{phone},occupation=#{occupation} where username=#{name}  
+   </update>
+   
+   <update id="updatePass" parameterType="User">
+   		update user SET password=#{pass} where username=#{name}  
    </update>
   
    

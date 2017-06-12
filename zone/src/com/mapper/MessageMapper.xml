@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.MessageMapper">
+   <resultMap type="Message" id="messagemap">
+      <result property="id" column="id"/>
+      <result property="sendusername" column="sendusername"/>
+      <result property="recieveusername" column="recieveusername"/>
+      <result property="content" column="content"/>
+      <result property="date" column="date"/>
+   </resultMap>
+   
+   <insert id="insertMessage" parameterType="Message" >
+       insert into message (sendusername,recieveusername,content,date) values(#{sendusername},#{recieveusername},#{content},now())
+   
+   </insert>
+   
+  <delete id="deleteMessage" parameterType="Message">
+       DELETE FROM message WHERE recieveusername=#{recieveusername} 
+   
+  </delete>
+   
+   <select id="getMessagebysend" parameterType="Message" resultMap="messagemap" >
+   
+      select * from message where sendusername=#{sendusername} 
+   </select>
+   
+   <select id="getMessagebyrecieve" parameterType="Message" resultMap="messagemap" >
+   
+      select * from message where recieveusername=#{recieveusername} 
+   </select>
+  
+   
+   
+   
+</mapper>

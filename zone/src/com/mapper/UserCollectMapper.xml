@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.UserCollectMapper">
+   
+   <resultMap type="UserCollect" id="usercollectmap">
+      <result property="id" column="id"/>
+      <result property="username" column="username"/>
+      <result property="collectname" column="collectname"/>     
+   </resultMap>
+   
+   <insert id="insertUserCollect" parameterType="UserCollect" >
+       insert into usercollect (username,collectname) values(#{username},#{collectname})
+   
+   </insert>
+   
+    <delete id="delectUserCollect" parameterType="userCollect" >
+       DELETE FROM usercollect WHERE username=#{username} and collectname=#{collectname}
+   
+   </delete>
+   
+   <select id="checkCollect" parameterType="UserCollect" resultMap="usercollectmap">
+   
+      select * from usercollect where username=#{username} and collectname=#{collectname}
+   </select>
+   
+</mapper>
