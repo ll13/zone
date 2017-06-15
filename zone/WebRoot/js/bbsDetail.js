@@ -89,6 +89,14 @@ $(function(){
 					}
 					
 				});	
+			}else{
+				$("#error").dialog("open");
+				setTimeout(function(){
+					$("#error").dialog("close");
+					$("#login").dialog("open");
+				},1000);
+			
+				
 			}
 			
 		}

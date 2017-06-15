@@ -11,7 +11,7 @@ $(function(){
 function showblog(type,keyword,page){
 	//$(".main_right").append("Hello,"+$.cookie("user"));
 	 $.ajax({
-		  url:"showBlog.do?Author=,"
+		  url:"showBlog.do?Author=",
 		  type:"POST",
 		  data:{
 			  user:"lili",

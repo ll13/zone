@@ -68,12 +68,12 @@ public class UserController {
 	}
 	
 	@RequestMapping("/showinformation.do")
-	public @ResponseBody String showinformation(String username,Model model){
+	public @ResponseBody User showinformation(String username,Model model){
 		User user=new User();
 		user.setName(username);
 		User userForDB=userMapper.getUserByName(user);
-		model.addAttribute("userinformation", userForDB);
-		return "1";
+		
+		return userForDB;
 	}
 	
 	@RequestMapping("/showMyCollectUser.do")

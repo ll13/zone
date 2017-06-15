@@ -26,4 +26,3 @@ function RankOfClicknum(type,keyword,page){
 		 }
   });
 }
-}

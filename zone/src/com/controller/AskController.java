@@ -184,8 +184,7 @@ public class AskController {
 		
 		
 		
-		model.addAttribute("answerlist", resultAnswerList);
-		
+		model.addAttribute("answerlist", resultAnswerList);		
 		model.addAttribute("questionid", questionid);
 		return "detailQuestion";
 	}

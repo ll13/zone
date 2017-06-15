@@ -8,7 +8,7 @@
                  <button id="bbs_btn" class="btn"><a href=bbs.jsp>论坛</a></button>
                  <button id="question_btn" class="btn"><a href=ask.jsp>问答</a></button>
                  <button id="download_btn" class="btn">下载</button>
-                 <button id="information_btn" class="btn">个人主页</button>
+                 <button id="information_btn" class="btn"><a href=information.jsp>个人主页</a></button>
              </div>
 		   	
 		   	 <div class="header_member">
@@ -23,7 +23,7 @@
    	      </div>
        </div>
        
-        <form id="register" title="会员注册" >
+        <form id="register" title="用户注册" >
           
           <ol class="register_error"></ol>
           
@@ -44,10 +44,10 @@
           </p>
           <p>
              <label for="user">性别:</label>
-             <input type="radio" name="sex" value="male" id="male" checked="checked">
+             <input type="radio" name="sex" value="男" id="male" checked="checked">
                 <label for="male">男</label>
              
-             <input type="radio" name="sex" value="female" id="female">
+             <input type="radio" name="sex" value="女" id="female">
                 <label for="female">女</label>
              
           </p>
@@ -58,7 +58,7 @@
      </form>
      
      
-     <form id="login" title="会员登录" >
+     <form id="login" title="用户登录" >
           
           <ol class="login_error"></ol>
           

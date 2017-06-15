@@ -39,14 +39,6 @@ $(function(){
 		 }}
 	 });
 	 
-	 
-	//tabs
-	$(function() {
-	    $( "#tabs" ).tabs({
-	    	
-	    });
-	  });
-	
 	
 	
 	
