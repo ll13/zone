@@ -140,15 +140,21 @@
 		             <h4>信息列表</h4>
 		             <hr noshade='noshade' class='Line' size='1' />
 		             <ul>
-		                <li><a>消息1</a></li>
-		                <li><a>消息2</a></li>
-		                <li><a>消息3</a></li>
+		                <li><a>jack的消息    </a><p>日期:2017-06-15</p></li>
+		                <li><a>jack的消息    </a><p>日期:2017-06-15</p></li>
+		                <li><a>jack的消息    </a><p>日期:2017-06-15</p></li>
 		             </ul>
 		          </div>
 		          <div id="messagedetail">
-		              <h4>详细信息</h4>
-		              <div>发送人：<em>jack</em></div>
-		              <div>内容：<em>内容</em></div>
+		              <div class="messagedetail_header">
+		                 <h4 class='message_title'>jack的消息</h4>
+		                 <div class='message_date'>日期：<em>2017-06-05</em></div>
+                         <div id='delectmessage'><a>删除</a></div>
+                      </div>
+		 
+		              
+		              <div class="message_content">内容：<em>内容</em></div>
+		             
 		          </div>
 	           </div>
 	           <div class="tab-pane fade" id="sendmessage">
@@ -159,12 +165,13 @@
 			             <input type="text" name="senduser"   id="senduser" />
 			          </p>
 			          <p>
-			             <label for="messageContent">内容:</label>
+			             <label for="messageContent">内 &nbsp;&nbsp;容:</label>
 			             <textarea  name="messageContent" id="messageContent">
                                                                                                              
                          </textarea>
 			          </p>
 			           <p>
+			            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			            <input type='button' value='提交' id='messagebtn' class='btn btn-primary '>
 			          </p>
 			          
@@ -172,19 +179,19 @@
 	           </div>
 	           <div class="tab-pane fade" id="mycolletuser">
 		          <ul>
-		             <li><a href="#">admin</a></li>
-		             <li><a href="#">admin</a></li>
-		             <li><a href="#">admin</a></li>
-		             <li><a href="#">admin</a></li>
+		             <li><a href="#" class='btn btn-primary'>admin</a></li>
+		             <li><a href="#" class='btn btn-primary'>admin</a></li>
+		             <li><a href="#" class='btn btn-primary'>admin</a></li>
+		             <li><a href="#" class='btn btn-primary'>admin</a></li>
 		             
 		          </ul>
 	           </div>
 	           <div class="tab-pane fade" id="collectme">
 		             <ul>
-		             <li><a href="#">admin</a></li>
-		             <li><a href="#">admin</a></li>
-		             <li><a href="#">admin</a></li>
-		             <li><a href="#">admin</a></li>		             
+		             <li><a href="#" class='btn btn-primary'>admin</a></li>
+		             <li><a href="#" class='btn btn-primary'>admin</a></li>
+		             <li><a href="#" class='btn btn-primary'>admin</a></li>
+		             <li><a href="#" class='btn btn-primary'>admin</a></li>		             
 		          </ul>
 	           </div>	
             </div>

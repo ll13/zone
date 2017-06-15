@@ -96,6 +96,72 @@
 	font-size: 15px;
 }
 
+#showmessage #messagelist{
+	display:inline-block;
+	width:20%;
+	float: left;
+	margin:10px 0 10px 20px;
+	border-right: 1px solid #aaa;
+}
+
+#showmessage #messagelist li{
+	font-size: 15px;
+	margin:10px 0 10px 20px;
+	border-bottom: 1px solid #ddd;
+}
+#showmessage  a{
+	cursor: pointer;
+}
+
+#showmessage  a:hover{
+	color:red;
+}
+
+#showmessage #messagedetail{
+	display:inline-block;
+	width:70%;
+	float: right;
+}
+
+.message_title{
+	display:inline-block;
+	width:30%;
+	float:left;
+}
+
+.messagedetail_header{
+	border-bottom: 1px solid #ddd;
+	float:left;
+	width:100%;
+	display:inline-block;
+	margin:10px 50px 10px 0;
+}
+
+.message_date,#delectmessage{
+	display:inline-block;
+	width:30%;
+	float:left;
+	margin:10px 20px 10px 10px;
+	font-size: 15px;
+}
+
+.message_content{
+	margin:10px 20px 10px 10px;
+	font-size: 15px;
+}
+
+#mycolletuser ul,#collectme ul{
+	margin:10px 20px 10px 50px;
+}
+
+#mycolletuser li,#collectme li{
+	display:inline-block;	
+	margin:10px 20px 10px 10px;
+}
+
+#mycolletuser a,#collectme a{
+	width:100px;
+}
 
 
 
